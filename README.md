@@ -4,7 +4,7 @@ My portfolio for Modeling Multimodal AI (MAS.S60 / 6.S985), Spring 2026 at MIT.
 
 ## About me
 
-I'm an MIT undergrad pursuing a BS in AI and Decision Making + Mathematics (with a Physics minor) alongside an MEng in EECS. My research spans acoustic holograms at CSAIL, renewable energy optimization at LIDS, and dual-timescale memory systems for video agents. Outside of research, I'm into combinatorics, quantum computing, and building robots.
+I'm an MIT undergrad pursuing a BS in AI and Decision Making + Mathematics (with a Physics minor) alongside an MEng in EECS. My research has spanned machine learning for acoustic holograms at CSAIL, renewable energy optimization at LIDS, and now dual-timescale memory systems for video agents. I am interested in all things related to Large Multimodal Models.
 
 ## How this repo is organized
 
