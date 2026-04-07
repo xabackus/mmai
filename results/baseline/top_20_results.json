@@ -1,0 +1,3222 @@
+[
+  {
+    "params": {
+      "alpha": 0.2,
+      "beta": 0.1,
+      "gamma": 0.1,
+      "kappa": 0.3,
+      "p": 3,
+      "tau_max": 40,
+      "tau_min": 8
+    },
+    "overall": {
+      "n": 4029,
+      "avg_loss": 0.6992,
+      "avg_acc_loss": 0.8975,
+      "avg_util_loss": 0.8975,
+      "avg_lat_loss": 4.2991,
+      "avg_similarity": 0.1025,
+      "avg_pred_length": 83.0
+    },
+    "by_split": {
+      "train": {
+        "n": 2746,
+        "avg_loss": 0.7042,
+        "avg_acc_loss": 0.8976,
+        "avg_util_loss": 0.8976,
+        "avg_lat_loss": 4.349,
+        "avg_similarity": 0.1024,
+        "avg_pred_length": 82.5
+      },
+      "test": {
+        "n": 1283,
+        "avg_loss": 0.6884,
+        "avg_acc_loss": 0.8972,
+        "avg_util_loss": 0.8972,
+        "avg_lat_loss": 4.1925,
+        "avg_similarity": 0.1028,
+        "avg_pred_length": 84.1
+      }
+    },
+    "by_urgency": {
+      "not_urgent": {
+        "n": 1884,
+        "avg_loss": 0.2767,
+        "avg_acc_loss": 0.9222,
+        "avg_util_loss": 0.9222,
+        "avg_lat_loss": 0.0,
+        "avg_similarity": 0.0778,
+        "avg_pred_length": 110.4
+      },
+      "urgent": {
+        "n": 2142,
+        "avg_loss": 1.0713,
+        "avg_acc_loss": 0.8755,
+        "avg_util_loss": 0.8755,
+        "avg_lat_loss": 8.0865,
+        "avg_similarity": 0.1245,
+        "avg_pred_length": 58.9
+      },
+      "ERROR": {
+        "n": 3,
+        "avg_loss": 0.3,
+        "avg_acc_loss": 1.0,
+        "avg_util_loss": 1.0,
+        "avg_lat_loss": 0.0,
+        "avg_similarity": 0.0,
+        "avg_pred_length": 129.0
+      }
+    },
+    "by_type": {
+      "Information reading": {
+        "n": 1,
+        "avg_loss": 0.3477,
+        "avg_acc_loss": 1.0,
+        "avg_util_loss": 1.0,
+        "avg_lat_loss": 0.4768,
+        "avg_similarity": 0.0,
+        "avg_pred_length": 33.0
+      },
+      "communication and interaction": {
+        "n": 81,
+        "avg_loss": 0.4504,
+        "avg_acc_loss": 0.9347,
+        "avg_util_loss": 0.9347,
+        "avg_lat_loss": 1.6997,
+        "avg_similarity": 0.0653,
+        "avg_pred_length": 80.4
+      },
+      "information reading": {
+        "n": 1873,
+        "avg_loss": 0.4891,
+        "avg_acc_loss": 0.9115,
+        "avg_util_loss": 0.9115,
+        "avg_lat_loss": 2.1561,
+        "avg_similarity": 0.0885,
+        "avg_pred_length": 80.4
+      },
+      "local navigation and positioning": {
+        "n": 363,
+        "avg_loss": 0.7865,
+        "avg_acc_loss": 0.8828,
+        "avg_util_loss": 0.8828,
+        "avg_lat_loss": 5.2169,
+        "avg_similarity": 0.1172,
+        "avg_pred_length": 94.9
+      },
+      "navigation": {
+        "n": 196,
+        "avg_loss": 0.7289,
+        "avg_acc_loss": 0.8944,
+        "avg_util_loss": 0.8944,
+        "avg_lat_loss": 4.6054,
+        "avg_similarity": 0.1056,
+        "avg_pred_length": 94.7
+      },
+      "other resources": {
+        "n": 99,
+        "avg_loss": 0.5,
+        "avg_acc_loss": 0.8939,
+        "avg_util_loss": 0.8939,
+        "avg_lat_loss": 2.3187,
+        "avg_similarity": 0.1061,
+        "avg_pred_length": 84.0
+      },
+      "resource acquisition and others": {
+        "n": 222,
+        "avg_loss": 0.501,
+        "avg_acc_loss": 0.8878,
+        "avg_util_loss": 0.8878,
+        "avg_lat_loss": 2.347,
+        "avg_similarity": 0.1122,
+        "avg_pred_length": 86.7
+      },
+      "safety warnings": {
+        "n": 946,
+        "avg_loss": 1.1184,
+        "avg_acc_loss": 0.8818,
+        "avg_util_loss": 0.8818,
+        "avg_lat_loss": 8.5387,
+        "avg_similarity": 0.1182,
+        "avg_pred_length": 67.7
+      },
+      "social communication": {
+        "n": 37,
+        "avg_loss": 0.4589,
+        "avg_acc_loss": 0.9352,
+        "avg_util_loss": 0.9352,
+        "avg_lat_loss": 1.7834,
+        "avg_similarity": 0.0648,
+        "avg_pred_length": 88.0
+      },
+      "tool use": {
+        "n": 211,
+        "avg_loss": 0.9476,
+        "avg_acc_loss": 0.8614,
+        "avg_util_loss": 0.8614,
+        "avg_lat_loss": 6.8921,
+        "avg_similarity": 0.1386,
+        "avg_pred_length": 139.6
+      }
+    }
+  },
+  {
+    "params": {
+      "alpha": 0.2,
+      "beta": 0.1,
+      "gamma": 0.1,
+      "kappa": 0.3,
+      "p": 3,
+      "tau_max": 40,
+      "tau_min": 5
+    },
+    "overall": {
+      "n": 4029,
+      "avg_loss": 0.6995,
+      "avg_acc_loss": 0.8975,
+      "avg_util_loss": 0.8975,
+      "avg_lat_loss": 4.3024,
+      "avg_similarity": 0.1025,
+      "avg_pred_length": 83.0
+    },
+    "by_split": {
+      "train": {
+        "n": 2746,
+        "avg_loss": 0.7045,
+        "avg_acc_loss": 0.8976,
+        "avg_util_loss": 0.8976,
+        "avg_lat_loss": 4.3524,
+        "avg_similarity": 0.1024,
+        "avg_pred_length": 82.5
+      },
+      "test": {
+        "n": 1283,
+        "avg_loss": 0.6887,
+        "avg_acc_loss": 0.8972,
+        "avg_util_loss": 0.8972,
+        "avg_lat_loss": 4.1955,
+        "avg_similarity": 0.1028,
+        "avg_pred_length": 84.1
+      }
+    },
+    "by_urgency": {
+      "not_urgent": {
+        "n": 1884,
+        "avg_loss": 0.2767,
+        "avg_acc_loss": 0.9222,
+        "avg_util_loss": 0.9222,
+        "avg_lat_loss": 0.0,
+        "avg_similarity": 0.0778,
+        "avg_pred_length": 110.4
+      },
+      "urgent": {
+        "n": 2142,
+        "avg_loss": 1.0719,
+        "avg_acc_loss": 0.8755,
+        "avg_util_loss": 0.8755,
+        "avg_lat_loss": 8.0926,
+        "avg_similarity": 0.1245,
+        "avg_pred_length": 58.9
+      },
+      "ERROR": {
+        "n": 3,
+        "avg_loss": 0.3,
+        "avg_acc_loss": 1.0,
+        "avg_util_loss": 1.0,
+        "avg_lat_loss": 0.0,
+        "avg_similarity": 0.0,
+        "avg_pred_length": 129.0
+      }
+    },
+    "by_type": {
+      "Information reading": {
+        "n": 1,
+        "avg_loss": 0.3512,
+        "avg_acc_loss": 1.0,
+        "avg_util_loss": 1.0,
+        "avg_lat_loss": 0.512,
+        "avg_similarity": 0.0,
+        "avg_pred_length": 33.0
+      },
+      "communication and interaction": {
+        "n": 81,
+        "avg_loss": 0.4508,
+        "avg_acc_loss": 0.9347,
+        "avg_util_loss": 0.9347,
+        "avg_lat_loss": 1.7037,
+        "avg_similarity": 0.0653,
+        "avg_pred_length": 80.4
+      },
+      "information reading": {
+        "n": 1873,
+        "avg_loss": 0.4893,
+        "avg_acc_loss": 0.9115,
+        "avg_util_loss": 0.9115,
+        "avg_lat_loss": 2.1589,
+        "avg_similarity": 0.0885,
+        "avg_pred_length": 80.4
+      },
+      "local navigation and positioning": {
+        "n": 363,
+        "avg_loss": 0.7867,
+        "avg_acc_loss": 0.8828,
+        "avg_util_loss": 0.8828,
+        "avg_lat_loss": 5.2187,
+        "avg_similarity": 0.1172,
+        "avg_pred_length": 94.9
+      },
+      "navigation": {
+        "n": 196,
+        "avg_loss": 0.729,
+        "avg_acc_loss": 0.8944,
+        "avg_util_loss": 0.8944,
+        "avg_lat_loss": 4.6069,
+        "avg_similarity": 0.1056,
+        "avg_pred_length": 94.7
+      },
+      "other resources": {
+        "n": 99,
+        "avg_loss": 0.5005,
+        "avg_acc_loss": 0.8939,
+        "avg_util_loss": 0.8939,
+        "avg_lat_loss": 2.3231,
+        "avg_similarity": 0.1061,
+        "avg_pred_length": 84.0
+      },
+      "resource acquisition and others": {
+        "n": 222,
+        "avg_loss": 0.5013,
+        "avg_acc_loss": 0.8878,
+        "avg_util_loss": 0.8878,
+        "avg_lat_loss": 2.3496,
+        "avg_similarity": 0.1122,
+        "avg_pred_length": 86.7
+      },
+      "safety warnings": {
+        "n": 946,
+        "avg_loss": 1.119,
+        "avg_acc_loss": 0.8818,
+        "avg_util_loss": 0.8818,
+        "avg_lat_loss": 8.5444,
+        "avg_similarity": 0.1182,
+        "avg_pred_length": 67.7
+      },
+      "social communication": {
+        "n": 37,
+        "avg_loss": 0.459,
+        "avg_acc_loss": 0.9352,
+        "avg_util_loss": 0.9352,
+        "avg_lat_loss": 1.7844,
+        "avg_similarity": 0.0648,
+        "avg_pred_length": 88.0
+      },
+      "tool use": {
+        "n": 211,
+        "avg_loss": 0.9477,
+        "avg_acc_loss": 0.8614,
+        "avg_util_loss": 0.8614,
+        "avg_lat_loss": 6.8924,
+        "avg_similarity": 0.1386,
+        "avg_pred_length": 139.6
+      }
+    }
+  },
+  {
+    "params": {
+      "alpha": 0.2,
+      "beta": 0.1,
+      "gamma": 0.1,
+      "kappa": 0.3,
+      "p": 3,
+      "tau_max": 40,
+      "tau_min": 3
+    },
+    "overall": {
+      "n": 4029,
+      "avg_loss": 0.6997,
+      "avg_acc_loss": 0.8975,
+      "avg_util_loss": 0.8975,
+      "avg_lat_loss": 4.3045,
+      "avg_similarity": 0.1025,
+      "avg_pred_length": 83.0
+    },
+    "by_split": {
+      "train": {
+        "n": 2746,
+        "avg_loss": 0.7047,
+        "avg_acc_loss": 0.8976,
+        "avg_util_loss": 0.8976,
+        "avg_lat_loss": 4.3546,
+        "avg_similarity": 0.1024,
+        "avg_pred_length": 82.5
+      },
+      "test": {
+        "n": 1283,
+        "avg_loss": 0.6889,
+        "avg_acc_loss": 0.8972,
+        "avg_util_loss": 0.8972,
+        "avg_lat_loss": 4.1974,
+        "avg_similarity": 0.1028,
+        "avg_pred_length": 84.1
+      }
+    },
+    "by_urgency": {
+      "not_urgent": {
+        "n": 1884,
+        "avg_loss": 0.2767,
+        "avg_acc_loss": 0.9222,
+        "avg_util_loss": 0.9222,
+        "avg_lat_loss": 0.0,
+        "avg_similarity": 0.0778,
+        "avg_pred_length": 110.4
+      },
+      "urgent": {
+        "n": 2142,
+        "avg_loss": 1.0723,
+        "avg_acc_loss": 0.8755,
+        "avg_util_loss": 0.8755,
+        "avg_lat_loss": 8.0966,
+        "avg_similarity": 0.1245,
+        "avg_pred_length": 58.9
+      },
+      "ERROR": {
+        "n": 3,
+        "avg_loss": 0.3,
+        "avg_acc_loss": 1.0,
+        "avg_util_loss": 1.0,
+        "avg_lat_loss": 0.0,
+        "avg_similarity": 0.0,
+        "avg_pred_length": 129.0
+      }
+    },
+    "by_type": {
+      "Information reading": {
+        "n": 1,
+        "avg_loss": 0.3533,
+        "avg_acc_loss": 1.0,
+        "avg_util_loss": 1.0,
+        "avg_lat_loss": 0.533,
+        "avg_similarity": 0.0,
+        "avg_pred_length": 33.0
+      },
+      "communication and interaction": {
+        "n": 81,
+        "avg_loss": 0.451,
+        "avg_acc_loss": 0.9347,
+        "avg_util_loss": 0.9347,
+        "avg_lat_loss": 1.7063,
+        "avg_similarity": 0.0653,
+        "avg_pred_length": 80.4
+      },
+      "information reading": {
+        "n": 1873,
+        "avg_loss": 0.4895,
+        "avg_acc_loss": 0.9115,
+        "avg_util_loss": 0.9115,
+        "avg_lat_loss": 2.1607,
+        "avg_similarity": 0.0885,
+        "avg_pred_length": 80.4
+      },
+      "local navigation and positioning": {
+        "n": 363,
+        "avg_loss": 0.7868,
+        "avg_acc_loss": 0.8828,
+        "avg_util_loss": 0.8828,
+        "avg_lat_loss": 5.2199,
+        "avg_similarity": 0.1172,
+        "avg_pred_length": 94.9
+      },
+      "navigation": {
+        "n": 196,
+        "avg_loss": 0.7291,
+        "avg_acc_loss": 0.8944,
+        "avg_util_loss": 0.8944,
+        "avg_lat_loss": 4.6078,
+        "avg_similarity": 0.1056,
+        "avg_pred_length": 94.7
+      },
+      "other resources": {
+        "n": 99,
+        "avg_loss": 0.5008,
+        "avg_acc_loss": 0.8939,
+        "avg_util_loss": 0.8939,
+        "avg_lat_loss": 2.3262,
+        "avg_similarity": 0.1061,
+        "avg_pred_length": 84.0
+      },
+      "resource acquisition and others": {
+        "n": 222,
+        "avg_loss": 0.5015,
+        "avg_acc_loss": 0.8878,
+        "avg_util_loss": 0.8878,
+        "avg_lat_loss": 2.3513,
+        "avg_similarity": 0.1122,
+        "avg_pred_length": 86.7
+      },
+      "safety warnings": {
+        "n": 946,
+        "avg_loss": 1.1193,
+        "avg_acc_loss": 0.8818,
+        "avg_util_loss": 0.8818,
+        "avg_lat_loss": 8.5482,
+        "avg_similarity": 0.1182,
+        "avg_pred_length": 67.7
+      },
+      "social communication": {
+        "n": 37,
+        "avg_loss": 0.4591,
+        "avg_acc_loss": 0.9352,
+        "avg_util_loss": 0.9352,
+        "avg_lat_loss": 1.7852,
+        "avg_similarity": 0.0648,
+        "avg_pred_length": 88.0
+      },
+      "tool use": {
+        "n": 211,
+        "avg_loss": 0.9477,
+        "avg_acc_loss": 0.8614,
+        "avg_util_loss": 0.8614,
+        "avg_lat_loss": 6.8926,
+        "avg_similarity": 0.1386,
+        "avg_pred_length": 139.6
+      }
+    }
+  },
+  {
+    "params": {
+      "alpha": 0.2,
+      "beta": 0.1,
+      "gamma": 0.1,
+      "kappa": 0.3,
+      "p": 2,
+      "tau_max": 40,
+      "tau_min": 8
+    },
+    "overall": {
+      "n": 4029,
+      "avg_loss": 0.7003,
+      "avg_acc_loss": 0.8975,
+      "avg_util_loss": 0.8975,
+      "avg_lat_loss": 4.3108,
+      "avg_similarity": 0.1025,
+      "avg_pred_length": 83.0
+    },
+    "by_split": {
+      "train": {
+        "n": 2746,
+        "avg_loss": 0.7054,
+        "avg_acc_loss": 0.8976,
+        "avg_util_loss": 0.8976,
+        "avg_lat_loss": 4.3611,
+        "avg_similarity": 0.1024,
+        "avg_pred_length": 82.5
+      },
+      "test": {
+        "n": 1283,
+        "avg_loss": 0.6895,
+        "avg_acc_loss": 0.8972,
+        "avg_util_loss": 0.8972,
+        "avg_lat_loss": 4.2031,
+        "avg_similarity": 0.1028,
+        "avg_pred_length": 84.1
+      }
+    },
+    "by_urgency": {
+      "not_urgent": {
+        "n": 1884,
+        "avg_loss": 0.2767,
+        "avg_acc_loss": 0.9222,
+        "avg_util_loss": 0.9222,
+        "avg_lat_loss": 0.0,
+        "avg_similarity": 0.0778,
+        "avg_pred_length": 110.4
+      },
+      "urgent": {
+        "n": 2142,
+        "avg_loss": 1.0735,
+        "avg_acc_loss": 0.8755,
+        "avg_util_loss": 0.8755,
+        "avg_lat_loss": 8.1084,
+        "avg_similarity": 0.1245,
+        "avg_pred_length": 58.9
+      },
+      "ERROR": {
+        "n": 3,
+        "avg_loss": 0.3,
+        "avg_acc_loss": 1.0,
+        "avg_util_loss": 1.0,
+        "avg_lat_loss": 0.0,
+        "avg_similarity": 0.0,
+        "avg_pred_length": 129.0
+      }
+    },
+    "by_type": {
+      "Information reading": {
+        "n": 1,
+        "avg_loss": 0.361,
+        "avg_acc_loss": 1.0,
+        "avg_util_loss": 1.0,
+        "avg_lat_loss": 0.6104,
+        "avg_similarity": 0.0,
+        "avg_pred_length": 33.0
+      },
+      "communication and interaction": {
+        "n": 81,
+        "avg_loss": 0.4518,
+        "avg_acc_loss": 0.9347,
+        "avg_util_loss": 0.9347,
+        "avg_lat_loss": 1.7138,
+        "avg_similarity": 0.0653,
+        "avg_pred_length": 80.4
+      },
+      "information reading": {
+        "n": 1873,
+        "avg_loss": 0.4901,
+        "avg_acc_loss": 0.9115,
+        "avg_util_loss": 0.9115,
+        "avg_lat_loss": 2.1661,
+        "avg_similarity": 0.0885,
+        "avg_pred_length": 80.4
+      },
+      "local navigation and positioning": {
+        "n": 363,
+        "avg_loss": 0.7872,
+        "avg_acc_loss": 0.8828,
+        "avg_util_loss": 0.8828,
+        "avg_lat_loss": 5.2236,
+        "avg_similarity": 0.1172,
+        "avg_pred_length": 94.9
+      },
+      "navigation": {
+        "n": 196,
+        "avg_loss": 0.7294,
+        "avg_acc_loss": 0.8944,
+        "avg_util_loss": 0.8944,
+        "avg_lat_loss": 4.6108,
+        "avg_similarity": 0.1056,
+        "avg_pred_length": 94.7
+      },
+      "other resources": {
+        "n": 99,
+        "avg_loss": 0.5016,
+        "avg_acc_loss": 0.8939,
+        "avg_util_loss": 0.8939,
+        "avg_lat_loss": 2.3346,
+        "avg_similarity": 0.1061,
+        "avg_pred_length": 84.0
+      },
+      "resource acquisition and others": {
+        "n": 222,
+        "avg_loss": 0.502,
+        "avg_acc_loss": 0.8878,
+        "avg_util_loss": 0.8878,
+        "avg_lat_loss": 2.3563,
+        "avg_similarity": 0.1122,
+        "avg_pred_length": 86.7
+      },
+      "safety warnings": {
+        "n": 946,
+        "avg_loss": 1.1205,
+        "avg_acc_loss": 0.8818,
+        "avg_util_loss": 0.8818,
+        "avg_lat_loss": 8.5593,
+        "avg_similarity": 0.1182,
+        "avg_pred_length": 67.7
+      },
+      "social communication": {
+        "n": 37,
+        "avg_loss": 0.4592,
+        "avg_acc_loss": 0.9352,
+        "avg_util_loss": 0.9352,
+        "avg_lat_loss": 1.7866,
+        "avg_similarity": 0.0648,
+        "avg_pred_length": 88.0
+      },
+      "tool use": {
+        "n": 211,
+        "avg_loss": 0.9477,
+        "avg_acc_loss": 0.8614,
+        "avg_util_loss": 0.8614,
+        "avg_lat_loss": 6.893,
+        "avg_similarity": 0.1386,
+        "avg_pred_length": 139.6
+      }
+    }
+  },
+  {
+    "params": {
+      "alpha": 0.2,
+      "beta": 0.1,
+      "gamma": 0.1,
+      "kappa": 0.3,
+      "p": 2,
+      "tau_max": 40,
+      "tau_min": 5
+    },
+    "overall": {
+      "n": 4029,
+      "avg_loss": 0.7007,
+      "avg_acc_loss": 0.8975,
+      "avg_util_loss": 0.8975,
+      "avg_lat_loss": 4.315,
+      "avg_similarity": 0.1025,
+      "avg_pred_length": 83.0
+    },
+    "by_split": {
+      "train": {
+        "n": 2746,
+        "avg_loss": 0.7058,
+        "avg_acc_loss": 0.8976,
+        "avg_util_loss": 0.8976,
+        "avg_lat_loss": 4.3655,
+        "avg_similarity": 0.1024,
+        "avg_pred_length": 82.5
+      },
+      "test": {
+        "n": 1283,
+        "avg_loss": 0.6898,
+        "avg_acc_loss": 0.8972,
+        "avg_util_loss": 0.8972,
+        "avg_lat_loss": 4.2068,
+        "avg_similarity": 0.1028,
+        "avg_pred_length": 84.1
+      }
+    },
+    "by_urgency": {
+      "not_urgent": {
+        "n": 1884,
+        "avg_loss": 0.2767,
+        "avg_acc_loss": 0.9222,
+        "avg_util_loss": 0.9222,
+        "avg_lat_loss": 0.0,
+        "avg_similarity": 0.0778,
+        "avg_pred_length": 110.4
+      },
+      "urgent": {
+        "n": 2142,
+        "avg_loss": 1.0743,
+        "avg_acc_loss": 0.8755,
+        "avg_util_loss": 0.8755,
+        "avg_lat_loss": 8.1162,
+        "avg_similarity": 0.1245,
+        "avg_pred_length": 58.9
+      },
+      "ERROR": {
+        "n": 3,
+        "avg_loss": 0.3,
+        "avg_acc_loss": 1.0,
+        "avg_util_loss": 1.0,
+        "avg_lat_loss": 0.0,
+        "avg_similarity": 0.0,
+        "avg_pred_length": 129.0
+      }
+    },
+    "by_type": {
+      "Information reading": {
+        "n": 1,
+        "avg_loss": 0.364,
+        "avg_acc_loss": 1.0,
+        "avg_util_loss": 1.0,
+        "avg_lat_loss": 0.64,
+        "avg_similarity": 0.0,
+        "avg_pred_length": 33.0
+      },
+      "communication and interaction": {
+        "n": 81,
+        "avg_loss": 0.4523,
+        "avg_acc_loss": 0.9347,
+        "avg_util_loss": 0.9347,
+        "avg_lat_loss": 1.7191,
+        "avg_similarity": 0.0653,
+        "avg_pred_length": 80.4
+      },
+      "information reading": {
+        "n": 1873,
+        "avg_loss": 0.4904,
+        "avg_acc_loss": 0.9115,
+        "avg_util_loss": 0.9115,
+        "avg_lat_loss": 2.1697,
+        "avg_similarity": 0.0885,
+        "avg_pred_length": 80.4
+      },
+      "local navigation and positioning": {
+        "n": 363,
+        "avg_loss": 0.7874,
+        "avg_acc_loss": 0.8828,
+        "avg_util_loss": 0.8828,
+        "avg_lat_loss": 5.2258,
+        "avg_similarity": 0.1172,
+        "avg_pred_length": 94.9
+      },
+      "navigation": {
+        "n": 196,
+        "avg_loss": 0.7295,
+        "avg_acc_loss": 0.8944,
+        "avg_util_loss": 0.8944,
+        "avg_lat_loss": 4.6122,
+        "avg_similarity": 0.1056,
+        "avg_pred_length": 94.7
+      },
+      "other resources": {
+        "n": 99,
+        "avg_loss": 0.5022,
+        "avg_acc_loss": 0.8939,
+        "avg_util_loss": 0.8939,
+        "avg_lat_loss": 2.3407,
+        "avg_similarity": 0.1061,
+        "avg_pred_length": 84.0
+      },
+      "resource acquisition and others": {
+        "n": 222,
+        "avg_loss": 0.5023,
+        "avg_acc_loss": 0.8878,
+        "avg_util_loss": 0.8878,
+        "avg_lat_loss": 2.3596,
+        "avg_similarity": 0.1122,
+        "avg_pred_length": 86.7
+      },
+      "safety warnings": {
+        "n": 946,
+        "avg_loss": 1.1212,
+        "avg_acc_loss": 0.8818,
+        "avg_util_loss": 0.8818,
+        "avg_lat_loss": 8.5665,
+        "avg_similarity": 0.1182,
+        "avg_pred_length": 67.7
+      },
+      "social communication": {
+        "n": 37,
+        "avg_loss": 0.4594,
+        "avg_acc_loss": 0.9352,
+        "avg_util_loss": 0.9352,
+        "avg_lat_loss": 1.7888,
+        "avg_similarity": 0.0648,
+        "avg_pred_length": 88.0
+      },
+      "tool use": {
+        "n": 211,
+        "avg_loss": 0.9478,
+        "avg_acc_loss": 0.8614,
+        "avg_util_loss": 0.8614,
+        "avg_lat_loss": 6.8935,
+        "avg_similarity": 0.1386,
+        "avg_pred_length": 139.6
+      }
+    }
+  },
+  {
+    "params": {
+      "alpha": 0.2,
+      "beta": 0.1,
+      "gamma": 0.1,
+      "kappa": 0.3,
+      "p": 2,
+      "tau_max": 40,
+      "tau_min": 3
+    },
+    "overall": {
+      "n": 4029,
+      "avg_loss": 0.701,
+      "avg_acc_loss": 0.8975,
+      "avg_util_loss": 0.8975,
+      "avg_lat_loss": 4.3178,
+      "avg_similarity": 0.1025,
+      "avg_pred_length": 83.0
+    },
+    "by_split": {
+      "train": {
+        "n": 2746,
+        "avg_loss": 0.7061,
+        "avg_acc_loss": 0.8976,
+        "avg_util_loss": 0.8976,
+        "avg_lat_loss": 4.3684,
+        "avg_similarity": 0.1024,
+        "avg_pred_length": 82.5
+      },
+      "test": {
+        "n": 1283,
+        "avg_loss": 0.6901,
+        "avg_acc_loss": 0.8972,
+        "avg_util_loss": 0.8972,
+        "avg_lat_loss": 4.2094,
+        "avg_similarity": 0.1028,
+        "avg_pred_length": 84.1
+      }
+    },
+    "by_urgency": {
+      "not_urgent": {
+        "n": 1884,
+        "avg_loss": 0.2767,
+        "avg_acc_loss": 0.9222,
+        "avg_util_loss": 0.9222,
+        "avg_lat_loss": 0.0,
+        "avg_similarity": 0.0778,
+        "avg_pred_length": 110.4
+      },
+      "urgent": {
+        "n": 2142,
+        "avg_loss": 1.0748,
+        "avg_acc_loss": 0.8755,
+        "avg_util_loss": 0.8755,
+        "avg_lat_loss": 8.1215,
+        "avg_similarity": 0.1245,
+        "avg_pred_length": 58.9
+      },
+      "ERROR": {
+        "n": 3,
+        "avg_loss": 0.3,
+        "avg_acc_loss": 1.0,
+        "avg_util_loss": 1.0,
+        "avg_lat_loss": 0.0,
+        "avg_similarity": 0.0,
+        "avg_pred_length": 129.0
+      }
+    },
+    "by_type": {
+      "Information reading": {
+        "n": 1,
+        "avg_loss": 0.3657,
+        "avg_acc_loss": 1.0,
+        "avg_util_loss": 1.0,
+        "avg_lat_loss": 0.6574,
+        "avg_similarity": 0.0,
+        "avg_pred_length": 33.0
+      },
+      "communication and interaction": {
+        "n": 81,
+        "avg_loss": 0.4527,
+        "avg_acc_loss": 0.9347,
+        "avg_util_loss": 0.9347,
+        "avg_lat_loss": 1.7231,
+        "avg_similarity": 0.0653,
+        "avg_pred_length": 80.4
+      },
+      "information reading": {
+        "n": 1873,
+        "avg_loss": 0.4907,
+        "avg_acc_loss": 0.9115,
+        "avg_util_loss": 0.9115,
+        "avg_lat_loss": 2.1724,
+        "avg_similarity": 0.0885,
+        "avg_pred_length": 80.4
+      },
+      "local navigation and positioning": {
+        "n": 363,
+        "avg_loss": 0.7876,
+        "avg_acc_loss": 0.8828,
+        "avg_util_loss": 0.8828,
+        "avg_lat_loss": 5.2273,
+        "avg_similarity": 0.1172,
+        "avg_pred_length": 94.9
+      },
+      "navigation": {
+        "n": 196,
+        "avg_loss": 0.7296,
+        "avg_acc_loss": 0.8944,
+        "avg_util_loss": 0.8944,
+        "avg_lat_loss": 4.6132,
+        "avg_similarity": 0.1056,
+        "avg_pred_length": 94.7
+      },
+      "other resources": {
+        "n": 99,
+        "avg_loss": 0.5026,
+        "avg_acc_loss": 0.8939,
+        "avg_util_loss": 0.8939,
+        "avg_lat_loss": 2.3448,
+        "avg_similarity": 0.1061,
+        "avg_pred_length": 84.0
+      },
+      "resource acquisition and others": {
+        "n": 222,
+        "avg_loss": 0.5025,
+        "avg_acc_loss": 0.8878,
+        "avg_util_loss": 0.8878,
+        "avg_lat_loss": 2.3618,
+        "avg_similarity": 0.1122,
+        "avg_pred_length": 86.7
+      },
+      "safety warnings": {
+        "n": 946,
+        "avg_loss": 1.1216,
+        "avg_acc_loss": 0.8818,
+        "avg_util_loss": 0.8818,
+        "avg_lat_loss": 8.571,
+        "avg_similarity": 0.1182,
+        "avg_pred_length": 67.7
+      },
+      "social communication": {
+        "n": 37,
+        "avg_loss": 0.4596,
+        "avg_acc_loss": 0.9352,
+        "avg_util_loss": 0.9352,
+        "avg_lat_loss": 1.7904,
+        "avg_similarity": 0.0648,
+        "avg_pred_length": 88.0
+      },
+      "tool use": {
+        "n": 211,
+        "avg_loss": 0.9478,
+        "avg_acc_loss": 0.8614,
+        "avg_util_loss": 0.8614,
+        "avg_lat_loss": 6.8939,
+        "avg_similarity": 0.1386,
+        "avg_pred_length": 139.6
+      }
+    }
+  },
+  {
+    "params": {
+      "alpha": 0.2,
+      "beta": 0.1,
+      "gamma": 0.1,
+      "kappa": 0.3,
+      "p": 1,
+      "tau_max": 40,
+      "tau_min": 8
+    },
+    "overall": {
+      "n": 4029,
+      "avg_loss": 0.7025,
+      "avg_acc_loss": 0.8975,
+      "avg_util_loss": 0.8975,
+      "avg_lat_loss": 4.3328,
+      "avg_similarity": 0.1025,
+      "avg_pred_length": 83.0
+    },
+    "by_split": {
+      "train": {
+        "n": 2746,
+        "avg_loss": 0.7077,
+        "avg_acc_loss": 0.8976,
+        "avg_util_loss": 0.8976,
+        "avg_lat_loss": 4.3841,
+        "avg_similarity": 0.1024,
+        "avg_pred_length": 82.5
+      },
+      "test": {
+        "n": 1283,
+        "avg_loss": 0.6914,
+        "avg_acc_loss": 0.8972,
+        "avg_util_loss": 0.8972,
+        "avg_lat_loss": 4.223,
+        "avg_similarity": 0.1028,
+        "avg_pred_length": 84.1
+      }
+    },
+    "by_urgency": {
+      "not_urgent": {
+        "n": 1884,
+        "avg_loss": 0.2767,
+        "avg_acc_loss": 0.9222,
+        "avg_util_loss": 0.9222,
+        "avg_lat_loss": 0.0,
+        "avg_similarity": 0.0778,
+        "avg_pred_length": 110.4
+      },
+      "urgent": {
+        "n": 2142,
+        "avg_loss": 1.0776,
+        "avg_acc_loss": 0.8755,
+        "avg_util_loss": 0.8755,
+        "avg_lat_loss": 8.1497,
+        "avg_similarity": 0.1245,
+        "avg_pred_length": 58.9
+      },
+      "ERROR": {
+        "n": 3,
+        "avg_loss": 0.3,
+        "avg_acc_loss": 1.0,
+        "avg_util_loss": 1.0,
+        "avg_lat_loss": 0.0,
+        "avg_similarity": 0.0,
+        "avg_pred_length": 129.0
+      }
+    },
+    "by_type": {
+      "Information reading": {
+        "n": 1,
+        "avg_loss": 0.3781,
+        "avg_acc_loss": 1.0,
+        "avg_util_loss": 1.0,
+        "avg_lat_loss": 0.7812,
+        "avg_similarity": 0.0,
+        "avg_pred_length": 33.0
+      },
+      "communication and interaction": {
+        "n": 81,
+        "avg_loss": 0.4544,
+        "avg_acc_loss": 0.9347,
+        "avg_util_loss": 0.9347,
+        "avg_lat_loss": 1.74,
+        "avg_similarity": 0.0653,
+        "avg_pred_length": 80.4
+      },
+      "information reading": {
+        "n": 1873,
+        "avg_loss": 0.492,
+        "avg_acc_loss": 0.9115,
+        "avg_util_loss": 0.9115,
+        "avg_lat_loss": 2.1849,
+        "avg_similarity": 0.0885,
+        "avg_pred_length": 80.4
+      },
+      "local navigation and positioning": {
+        "n": 363,
+        "avg_loss": 0.7884,
+        "avg_acc_loss": 0.8828,
+        "avg_util_loss": 0.8828,
+        "avg_lat_loss": 5.2356,
+        "avg_similarity": 0.1172,
+        "avg_pred_length": 94.9
+      },
+      "navigation": {
+        "n": 196,
+        "avg_loss": 0.7302,
+        "avg_acc_loss": 0.8944,
+        "avg_util_loss": 0.8944,
+        "avg_lat_loss": 4.6189,
+        "avg_similarity": 0.1056,
+        "avg_pred_length": 94.7
+      },
+      "other resources": {
+        "n": 99,
+        "avg_loss": 0.5048,
+        "avg_acc_loss": 0.8939,
+        "avg_util_loss": 0.8939,
+        "avg_lat_loss": 2.3665,
+        "avg_similarity": 0.1061,
+        "avg_pred_length": 84.0
+      },
+      "resource acquisition and others": {
+        "n": 222,
+        "avg_loss": 0.5038,
+        "avg_acc_loss": 0.8878,
+        "avg_util_loss": 0.8878,
+        "avg_lat_loss": 2.3742,
+        "avg_similarity": 0.1122,
+        "avg_pred_length": 86.7
+      },
+      "safety warnings": {
+        "n": 946,
+        "avg_loss": 1.1244,
+        "avg_acc_loss": 0.8818,
+        "avg_util_loss": 0.8818,
+        "avg_lat_loss": 8.5983,
+        "avg_similarity": 0.1182,
+        "avg_pred_length": 67.7
+      },
+      "social communication": {
+        "n": 37,
+        "avg_loss": 0.4603,
+        "avg_acc_loss": 0.9352,
+        "avg_util_loss": 0.9352,
+        "avg_lat_loss": 1.7971,
+        "avg_similarity": 0.0648,
+        "avg_pred_length": 88.0
+      },
+      "tool use": {
+        "n": 211,
+        "avg_loss": 0.948,
+        "avg_acc_loss": 0.8614,
+        "avg_util_loss": 0.8614,
+        "avg_lat_loss": 6.8954,
+        "avg_similarity": 0.1386,
+        "avg_pred_length": 139.6
+      }
+    }
+  },
+  {
+    "params": {
+      "alpha": 0.2,
+      "beta": 0.1,
+      "gamma": 0.1,
+      "kappa": 0.3,
+      "p": 1,
+      "tau_max": 40,
+      "tau_min": 5
+    },
+    "overall": {
+      "n": 4029,
+      "avg_loss": 0.7032,
+      "avg_acc_loss": 0.8975,
+      "avg_util_loss": 0.8975,
+      "avg_lat_loss": 4.3394,
+      "avg_similarity": 0.1025,
+      "avg_pred_length": 83.0
+    },
+    "by_split": {
+      "train": {
+        "n": 2746,
+        "avg_loss": 0.7084,
+        "avg_acc_loss": 0.8976,
+        "avg_util_loss": 0.8976,
+        "avg_lat_loss": 4.391,
+        "avg_similarity": 0.1024,
+        "avg_pred_length": 82.5
+      },
+      "test": {
+        "n": 1283,
+        "avg_loss": 0.6921,
+        "avg_acc_loss": 0.8972,
+        "avg_util_loss": 0.8972,
+        "avg_lat_loss": 4.2292,
+        "avg_similarity": 0.1028,
+        "avg_pred_length": 84.1
+      }
+    },
+    "by_urgency": {
+      "not_urgent": {
+        "n": 1884,
+        "avg_loss": 0.2767,
+        "avg_acc_loss": 0.9222,
+        "avg_util_loss": 0.9222,
+        "avg_lat_loss": 0.0,
+        "avg_similarity": 0.0778,
+        "avg_pred_length": 110.4
+      },
+      "urgent": {
+        "n": 2142,
+        "avg_loss": 1.0789,
+        "avg_acc_loss": 0.8755,
+        "avg_util_loss": 0.8755,
+        "avg_lat_loss": 8.1623,
+        "avg_similarity": 0.1245,
+        "avg_pred_length": 58.9
+      },
+      "ERROR": {
+        "n": 3,
+        "avg_loss": 0.3,
+        "avg_acc_loss": 1.0,
+        "avg_util_loss": 1.0,
+        "avg_lat_loss": 0.0,
+        "avg_similarity": 0.0,
+        "avg_pred_length": 129.0
+      }
+    },
+    "by_type": {
+      "Information reading": {
+        "n": 1,
+        "avg_loss": 0.38,
+        "avg_acc_loss": 1.0,
+        "avg_util_loss": 1.0,
+        "avg_lat_loss": 0.8,
+        "avg_similarity": 0.0,
+        "avg_pred_length": 33.0
+      },
+      "communication and interaction": {
+        "n": 81,
+        "avg_loss": 0.4557,
+        "avg_acc_loss": 0.9347,
+        "avg_util_loss": 0.9347,
+        "avg_lat_loss": 1.7526,
+        "avg_similarity": 0.0653,
+        "avg_pred_length": 80.4
+      },
+      "information reading": {
+        "n": 1873,
+        "avg_loss": 0.4927,
+        "avg_acc_loss": 0.9115,
+        "avg_util_loss": 0.9115,
+        "avg_lat_loss": 2.1921,
+        "avg_similarity": 0.0885,
+        "avg_pred_length": 80.4
+      },
+      "local navigation and positioning": {
+        "n": 363,
+        "avg_loss": 0.7887,
+        "avg_acc_loss": 0.8828,
+        "avg_util_loss": 0.8828,
+        "avg_lat_loss": 5.239,
+        "avg_similarity": 0.1172,
+        "avg_pred_length": 94.9
+      },
+      "navigation": {
+        "n": 196,
+        "avg_loss": 0.7304,
+        "avg_acc_loss": 0.8944,
+        "avg_util_loss": 0.8944,
+        "avg_lat_loss": 4.6205,
+        "avg_similarity": 0.1056,
+        "avg_pred_length": 94.7
+      },
+      "other resources": {
+        "n": 99,
+        "avg_loss": 0.5058,
+        "avg_acc_loss": 0.8939,
+        "avg_util_loss": 0.8939,
+        "avg_lat_loss": 2.3766,
+        "avg_similarity": 0.1061,
+        "avg_pred_length": 84.0
+      },
+      "resource acquisition and others": {
+        "n": 222,
+        "avg_loss": 0.5042,
+        "avg_acc_loss": 0.8878,
+        "avg_util_loss": 0.8878,
+        "avg_lat_loss": 2.3788,
+        "avg_similarity": 0.1122,
+        "avg_pred_length": 86.7
+      },
+      "safety warnings": {
+        "n": 946,
+        "avg_loss": 1.1252,
+        "avg_acc_loss": 0.8818,
+        "avg_util_loss": 0.8818,
+        "avg_lat_loss": 8.6072,
+        "avg_similarity": 0.1182,
+        "avg_pred_length": 67.7
+      },
+      "social communication": {
+        "n": 37,
+        "avg_loss": 0.4608,
+        "avg_acc_loss": 0.9352,
+        "avg_util_loss": 0.9352,
+        "avg_lat_loss": 1.8027,
+        "avg_similarity": 0.0648,
+        "avg_pred_length": 88.0
+      },
+      "tool use": {
+        "n": 211,
+        "avg_loss": 0.9481,
+        "avg_acc_loss": 0.8614,
+        "avg_util_loss": 0.8614,
+        "avg_lat_loss": 6.8966,
+        "avg_similarity": 0.1386,
+        "avg_pred_length": 139.6
+      }
+    }
+  },
+  {
+    "params": {
+      "alpha": 0.2,
+      "beta": 0.1,
+      "gamma": 0.1,
+      "kappa": 0.3,
+      "p": 1,
+      "tau_max": 40,
+      "tau_min": 3
+    },
+    "overall": {
+      "n": 4029,
+      "avg_loss": 0.7036,
+      "avg_acc_loss": 0.8975,
+      "avg_util_loss": 0.8975,
+      "avg_lat_loss": 4.3439,
+      "avg_similarity": 0.1025,
+      "avg_pred_length": 83.0
+    },
+    "by_split": {
+      "train": {
+        "n": 2746,
+        "avg_loss": 0.7088,
+        "avg_acc_loss": 0.8976,
+        "avg_util_loss": 0.8976,
+        "avg_lat_loss": 4.3956,
+        "avg_similarity": 0.1024,
+        "avg_pred_length": 82.5
+      },
+      "test": {
+        "n": 1283,
+        "avg_loss": 0.6925,
+        "avg_acc_loss": 0.8972,
+        "avg_util_loss": 0.8972,
+        "avg_lat_loss": 4.2333,
+        "avg_similarity": 0.1028,
+        "avg_pred_length": 84.1
+      }
+    },
+    "by_urgency": {
+      "not_urgent": {
+        "n": 1884,
+        "avg_loss": 0.2767,
+        "avg_acc_loss": 0.9222,
+        "avg_util_loss": 0.9222,
+        "avg_lat_loss": 0.0,
+        "avg_similarity": 0.0778,
+        "avg_pred_length": 110.4
+      },
+      "urgent": {
+        "n": 2142,
+        "avg_loss": 1.0797,
+        "avg_acc_loss": 0.8755,
+        "avg_util_loss": 0.8755,
+        "avg_lat_loss": 8.1707,
+        "avg_similarity": 0.1245,
+        "avg_pred_length": 58.9
+      },
+      "ERROR": {
+        "n": 3,
+        "avg_loss": 0.3,
+        "avg_acc_loss": 1.0,
+        "avg_util_loss": 1.0,
+        "avg_lat_loss": 0.0,
+        "avg_similarity": 0.0,
+        "avg_pred_length": 129.0
+      }
+    },
+    "by_type": {
+      "Information reading": {
+        "n": 1,
+        "avg_loss": 0.3811,
+        "avg_acc_loss": 1.0,
+        "avg_util_loss": 1.0,
+        "avg_lat_loss": 0.8108,
+        "avg_similarity": 0.0,
+        "avg_pred_length": 33.0
+      },
+      "communication and interaction": {
+        "n": 81,
+        "avg_loss": 0.4565,
+        "avg_acc_loss": 0.9347,
+        "avg_util_loss": 0.9347,
+        "avg_lat_loss": 1.7607,
+        "avg_similarity": 0.0653,
+        "avg_pred_length": 80.4
+      },
+      "information reading": {
+        "n": 1873,
+        "avg_loss": 0.4932,
+        "avg_acc_loss": 0.9115,
+        "avg_util_loss": 0.9115,
+        "avg_lat_loss": 2.1974,
+        "avg_similarity": 0.0885,
+        "avg_pred_length": 80.4
+      },
+      "local navigation and positioning": {
+        "n": 363,
+        "avg_loss": 0.7889,
+        "avg_acc_loss": 0.8828,
+        "avg_util_loss": 0.8828,
+        "avg_lat_loss": 5.2411,
+        "avg_similarity": 0.1172,
+        "avg_pred_length": 94.9
+      },
+      "navigation": {
+        "n": 196,
+        "avg_loss": 0.7305,
+        "avg_acc_loss": 0.8944,
+        "avg_util_loss": 0.8944,
+        "avg_lat_loss": 4.6219,
+        "avg_similarity": 0.1056,
+        "avg_pred_length": 94.7
+      },
+      "other resources": {
+        "n": 99,
+        "avg_loss": 0.5064,
+        "avg_acc_loss": 0.8939,
+        "avg_util_loss": 0.8939,
+        "avg_lat_loss": 2.3828,
+        "avg_similarity": 0.1061,
+        "avg_pred_length": 84.0
+      },
+      "resource acquisition and others": {
+        "n": 222,
+        "avg_loss": 0.5045,
+        "avg_acc_loss": 0.8878,
+        "avg_util_loss": 0.8878,
+        "avg_lat_loss": 2.3816,
+        "avg_similarity": 0.1122,
+        "avg_pred_length": 86.7
+      },
+      "safety warnings": {
+        "n": 946,
+        "avg_loss": 1.1258,
+        "avg_acc_loss": 0.8818,
+        "avg_util_loss": 0.8818,
+        "avg_lat_loss": 8.6126,
+        "avg_similarity": 0.1182,
+        "avg_pred_length": 67.7
+      },
+      "social communication": {
+        "n": 37,
+        "avg_loss": 0.4611,
+        "avg_acc_loss": 0.9352,
+        "avg_util_loss": 0.9352,
+        "avg_lat_loss": 1.8059,
+        "avg_similarity": 0.0648,
+        "avg_pred_length": 88.0
+      },
+      "tool use": {
+        "n": 211,
+        "avg_loss": 0.9481,
+        "avg_acc_loss": 0.8614,
+        "avg_util_loss": 0.8614,
+        "avg_lat_loss": 6.8973,
+        "avg_similarity": 0.1386,
+        "avg_pred_length": 139.6
+      }
+    }
+  },
+  {
+    "params": {
+      "alpha": 0.2,
+      "beta": 0.2,
+      "gamma": 0.1,
+      "kappa": 0.3,
+      "p": 3,
+      "tau_max": 40,
+      "tau_min": 8
+    },
+    "overall": {
+      "n": 4029,
+      "avg_loss": 0.7889,
+      "avg_acc_loss": 0.8975,
+      "avg_util_loss": 0.8975,
+      "avg_lat_loss": 4.2991,
+      "avg_similarity": 0.1025,
+      "avg_pred_length": 83.0
+    },
+    "by_split": {
+      "train": {
+        "n": 2746,
+        "avg_loss": 0.7939,
+        "avg_acc_loss": 0.8976,
+        "avg_util_loss": 0.8976,
+        "avg_lat_loss": 4.349,
+        "avg_similarity": 0.1024,
+        "avg_pred_length": 82.5
+      },
+      "test": {
+        "n": 1283,
+        "avg_loss": 0.7781,
+        "avg_acc_loss": 0.8972,
+        "avg_util_loss": 0.8972,
+        "avg_lat_loss": 4.1925,
+        "avg_similarity": 0.1028,
+        "avg_pred_length": 84.1
+      }
+    },
+    "by_urgency": {
+      "not_urgent": {
+        "n": 1884,
+        "avg_loss": 0.3689,
+        "avg_acc_loss": 0.9222,
+        "avg_util_loss": 0.9222,
+        "avg_lat_loss": 0.0,
+        "avg_similarity": 0.0778,
+        "avg_pred_length": 110.4
+      },
+      "urgent": {
+        "n": 2142,
+        "avg_loss": 1.1589,
+        "avg_acc_loss": 0.8755,
+        "avg_util_loss": 0.8755,
+        "avg_lat_loss": 8.0865,
+        "avg_similarity": 0.1245,
+        "avg_pred_length": 58.9
+      },
+      "ERROR": {
+        "n": 3,
+        "avg_loss": 0.4,
+        "avg_acc_loss": 1.0,
+        "avg_util_loss": 1.0,
+        "avg_lat_loss": 0.0,
+        "avg_similarity": 0.0,
+        "avg_pred_length": 129.0
+      }
+    },
+    "by_type": {
+      "Information reading": {
+        "n": 1,
+        "avg_loss": 0.4477,
+        "avg_acc_loss": 1.0,
+        "avg_util_loss": 1.0,
+        "avg_lat_loss": 0.4768,
+        "avg_similarity": 0.0,
+        "avg_pred_length": 33.0
+      },
+      "communication and interaction": {
+        "n": 81,
+        "avg_loss": 0.5439,
+        "avg_acc_loss": 0.9347,
+        "avg_util_loss": 0.9347,
+        "avg_lat_loss": 1.6997,
+        "avg_similarity": 0.0653,
+        "avg_pred_length": 80.4
+      },
+      "information reading": {
+        "n": 1873,
+        "avg_loss": 0.5802,
+        "avg_acc_loss": 0.9115,
+        "avg_util_loss": 0.9115,
+        "avg_lat_loss": 2.1561,
+        "avg_similarity": 0.0885,
+        "avg_pred_length": 80.4
+      },
+      "local navigation and positioning": {
+        "n": 363,
+        "avg_loss": 0.8748,
+        "avg_acc_loss": 0.8828,
+        "avg_util_loss": 0.8828,
+        "avg_lat_loss": 5.2169,
+        "avg_similarity": 0.1172,
+        "avg_pred_length": 94.9
+      },
+      "navigation": {
+        "n": 196,
+        "avg_loss": 0.8183,
+        "avg_acc_loss": 0.8944,
+        "avg_util_loss": 0.8944,
+        "avg_lat_loss": 4.6054,
+        "avg_similarity": 0.1056,
+        "avg_pred_length": 94.7
+      },
+      "other resources": {
+        "n": 99,
+        "avg_loss": 0.5894,
+        "avg_acc_loss": 0.8939,
+        "avg_util_loss": 0.8939,
+        "avg_lat_loss": 2.3187,
+        "avg_similarity": 0.1061,
+        "avg_pred_length": 84.0
+      },
+      "resource acquisition and others": {
+        "n": 222,
+        "avg_loss": 0.5898,
+        "avg_acc_loss": 0.8878,
+        "avg_util_loss": 0.8878,
+        "avg_lat_loss": 2.347,
+        "avg_similarity": 0.1122,
+        "avg_pred_length": 86.7
+      },
+      "safety warnings": {
+        "n": 946,
+        "avg_loss": 1.2066,
+        "avg_acc_loss": 0.8818,
+        "avg_util_loss": 0.8818,
+        "avg_lat_loss": 8.5387,
+        "avg_similarity": 0.1182,
+        "avg_pred_length": 67.7
+      },
+      "social communication": {
+        "n": 37,
+        "avg_loss": 0.5524,
+        "avg_acc_loss": 0.9352,
+        "avg_util_loss": 0.9352,
+        "avg_lat_loss": 1.7834,
+        "avg_similarity": 0.0648,
+        "avg_pred_length": 88.0
+      },
+      "tool use": {
+        "n": 211,
+        "avg_loss": 1.0338,
+        "avg_acc_loss": 0.8614,
+        "avg_util_loss": 0.8614,
+        "avg_lat_loss": 6.8921,
+        "avg_similarity": 0.1386,
+        "avg_pred_length": 139.6
+      }
+    }
+  },
+  {
+    "params": {
+      "alpha": 0.3,
+      "beta": 0.1,
+      "gamma": 0.1,
+      "kappa": 0.3,
+      "p": 3,
+      "tau_max": 40,
+      "tau_min": 8
+    },
+    "overall": {
+      "n": 4029,
+      "avg_loss": 0.7889,
+      "avg_acc_loss": 0.8975,
+      "avg_util_loss": 0.8975,
+      "avg_lat_loss": 4.2991,
+      "avg_similarity": 0.1025,
+      "avg_pred_length": 83.0
+    },
+    "by_split": {
+      "train": {
+        "n": 2746,
+        "avg_loss": 0.7939,
+        "avg_acc_loss": 0.8976,
+        "avg_util_loss": 0.8976,
+        "avg_lat_loss": 4.349,
+        "avg_similarity": 0.1024,
+        "avg_pred_length": 82.5
+      },
+      "test": {
+        "n": 1283,
+        "avg_loss": 0.7781,
+        "avg_acc_loss": 0.8972,
+        "avg_util_loss": 0.8972,
+        "avg_lat_loss": 4.1925,
+        "avg_similarity": 0.1028,
+        "avg_pred_length": 84.1
+      }
+    },
+    "by_urgency": {
+      "not_urgent": {
+        "n": 1884,
+        "avg_loss": 0.3689,
+        "avg_acc_loss": 0.9222,
+        "avg_util_loss": 0.9222,
+        "avg_lat_loss": 0.0,
+        "avg_similarity": 0.0778,
+        "avg_pred_length": 110.4
+      },
+      "urgent": {
+        "n": 2142,
+        "avg_loss": 1.1589,
+        "avg_acc_loss": 0.8755,
+        "avg_util_loss": 0.8755,
+        "avg_lat_loss": 8.0865,
+        "avg_similarity": 0.1245,
+        "avg_pred_length": 58.9
+      },
+      "ERROR": {
+        "n": 3,
+        "avg_loss": 0.4,
+        "avg_acc_loss": 1.0,
+        "avg_util_loss": 1.0,
+        "avg_lat_loss": 0.0,
+        "avg_similarity": 0.0,
+        "avg_pred_length": 129.0
+      }
+    },
+    "by_type": {
+      "Information reading": {
+        "n": 1,
+        "avg_loss": 0.4477,
+        "avg_acc_loss": 1.0,
+        "avg_util_loss": 1.0,
+        "avg_lat_loss": 0.4768,
+        "avg_similarity": 0.0,
+        "avg_pred_length": 33.0
+      },
+      "communication and interaction": {
+        "n": 81,
+        "avg_loss": 0.5439,
+        "avg_acc_loss": 0.9347,
+        "avg_util_loss": 0.9347,
+        "avg_lat_loss": 1.6997,
+        "avg_similarity": 0.0653,
+        "avg_pred_length": 80.4
+      },
+      "information reading": {
+        "n": 1873,
+        "avg_loss": 0.5802,
+        "avg_acc_loss": 0.9115,
+        "avg_util_loss": 0.9115,
+        "avg_lat_loss": 2.1561,
+        "avg_similarity": 0.0885,
+        "avg_pred_length": 80.4
+      },
+      "local navigation and positioning": {
+        "n": 363,
+        "avg_loss": 0.8748,
+        "avg_acc_loss": 0.8828,
+        "avg_util_loss": 0.8828,
+        "avg_lat_loss": 5.2169,
+        "avg_similarity": 0.1172,
+        "avg_pred_length": 94.9
+      },
+      "navigation": {
+        "n": 196,
+        "avg_loss": 0.8183,
+        "avg_acc_loss": 0.8944,
+        "avg_util_loss": 0.8944,
+        "avg_lat_loss": 4.6054,
+        "avg_similarity": 0.1056,
+        "avg_pred_length": 94.7
+      },
+      "other resources": {
+        "n": 99,
+        "avg_loss": 0.5894,
+        "avg_acc_loss": 0.8939,
+        "avg_util_loss": 0.8939,
+        "avg_lat_loss": 2.3187,
+        "avg_similarity": 0.1061,
+        "avg_pred_length": 84.0
+      },
+      "resource acquisition and others": {
+        "n": 222,
+        "avg_loss": 0.5898,
+        "avg_acc_loss": 0.8878,
+        "avg_util_loss": 0.8878,
+        "avg_lat_loss": 2.347,
+        "avg_similarity": 0.1122,
+        "avg_pred_length": 86.7
+      },
+      "safety warnings": {
+        "n": 946,
+        "avg_loss": 1.2066,
+        "avg_acc_loss": 0.8818,
+        "avg_util_loss": 0.8818,
+        "avg_lat_loss": 8.5387,
+        "avg_similarity": 0.1182,
+        "avg_pred_length": 67.7
+      },
+      "social communication": {
+        "n": 37,
+        "avg_loss": 0.5524,
+        "avg_acc_loss": 0.9352,
+        "avg_util_loss": 0.9352,
+        "avg_lat_loss": 1.7834,
+        "avg_similarity": 0.0648,
+        "avg_pred_length": 88.0
+      },
+      "tool use": {
+        "n": 211,
+        "avg_loss": 1.0338,
+        "avg_acc_loss": 0.8614,
+        "avg_util_loss": 0.8614,
+        "avg_lat_loss": 6.8921,
+        "avg_similarity": 0.1386,
+        "avg_pred_length": 139.6
+      }
+    }
+  },
+  {
+    "params": {
+      "alpha": 0.2,
+      "beta": 0.2,
+      "gamma": 0.1,
+      "kappa": 0.3,
+      "p": 3,
+      "tau_max": 40,
+      "tau_min": 5
+    },
+    "overall": {
+      "n": 4029,
+      "avg_loss": 0.7892,
+      "avg_acc_loss": 0.8975,
+      "avg_util_loss": 0.8975,
+      "avg_lat_loss": 4.3024,
+      "avg_similarity": 0.1025,
+      "avg_pred_length": 83.0
+    },
+    "by_split": {
+      "train": {
+        "n": 2746,
+        "avg_loss": 0.7943,
+        "avg_acc_loss": 0.8976,
+        "avg_util_loss": 0.8976,
+        "avg_lat_loss": 4.3524,
+        "avg_similarity": 0.1024,
+        "avg_pred_length": 82.5
+      },
+      "test": {
+        "n": 1283,
+        "avg_loss": 0.7784,
+        "avg_acc_loss": 0.8972,
+        "avg_util_loss": 0.8972,
+        "avg_lat_loss": 4.1955,
+        "avg_similarity": 0.1028,
+        "avg_pred_length": 84.1
+      }
+    },
+    "by_urgency": {
+      "not_urgent": {
+        "n": 1884,
+        "avg_loss": 0.3689,
+        "avg_acc_loss": 0.9222,
+        "avg_util_loss": 0.9222,
+        "avg_lat_loss": 0.0,
+        "avg_similarity": 0.0778,
+        "avg_pred_length": 110.4
+      },
+      "urgent": {
+        "n": 2142,
+        "avg_loss": 1.1595,
+        "avg_acc_loss": 0.8755,
+        "avg_util_loss": 0.8755,
+        "avg_lat_loss": 8.0926,
+        "avg_similarity": 0.1245,
+        "avg_pred_length": 58.9
+      },
+      "ERROR": {
+        "n": 3,
+        "avg_loss": 0.4,
+        "avg_acc_loss": 1.0,
+        "avg_util_loss": 1.0,
+        "avg_lat_loss": 0.0,
+        "avg_similarity": 0.0,
+        "avg_pred_length": 129.0
+      }
+    },
+    "by_type": {
+      "Information reading": {
+        "n": 1,
+        "avg_loss": 0.4512,
+        "avg_acc_loss": 1.0,
+        "avg_util_loss": 1.0,
+        "avg_lat_loss": 0.512,
+        "avg_similarity": 0.0,
+        "avg_pred_length": 33.0
+      },
+      "communication and interaction": {
+        "n": 81,
+        "avg_loss": 0.5443,
+        "avg_acc_loss": 0.9347,
+        "avg_util_loss": 0.9347,
+        "avg_lat_loss": 1.7037,
+        "avg_similarity": 0.0653,
+        "avg_pred_length": 80.4
+      },
+      "information reading": {
+        "n": 1873,
+        "avg_loss": 0.5805,
+        "avg_acc_loss": 0.9115,
+        "avg_util_loss": 0.9115,
+        "avg_lat_loss": 2.1589,
+        "avg_similarity": 0.0885,
+        "avg_pred_length": 80.4
+      },
+      "local navigation and positioning": {
+        "n": 363,
+        "avg_loss": 0.875,
+        "avg_acc_loss": 0.8828,
+        "avg_util_loss": 0.8828,
+        "avg_lat_loss": 5.2187,
+        "avg_similarity": 0.1172,
+        "avg_pred_length": 94.9
+      },
+      "navigation": {
+        "n": 196,
+        "avg_loss": 0.8185,
+        "avg_acc_loss": 0.8944,
+        "avg_util_loss": 0.8944,
+        "avg_lat_loss": 4.6069,
+        "avg_similarity": 0.1056,
+        "avg_pred_length": 94.7
+      },
+      "other resources": {
+        "n": 99,
+        "avg_loss": 0.5899,
+        "avg_acc_loss": 0.8939,
+        "avg_util_loss": 0.8939,
+        "avg_lat_loss": 2.3231,
+        "avg_similarity": 0.1061,
+        "avg_pred_length": 84.0
+      },
+      "resource acquisition and others": {
+        "n": 222,
+        "avg_loss": 0.5901,
+        "avg_acc_loss": 0.8878,
+        "avg_util_loss": 0.8878,
+        "avg_lat_loss": 2.3496,
+        "avg_similarity": 0.1122,
+        "avg_pred_length": 86.7
+      },
+      "safety warnings": {
+        "n": 946,
+        "avg_loss": 1.2071,
+        "avg_acc_loss": 0.8818,
+        "avg_util_loss": 0.8818,
+        "avg_lat_loss": 8.5444,
+        "avg_similarity": 0.1182,
+        "avg_pred_length": 67.7
+      },
+      "social communication": {
+        "n": 37,
+        "avg_loss": 0.5525,
+        "avg_acc_loss": 0.9352,
+        "avg_util_loss": 0.9352,
+        "avg_lat_loss": 1.7844,
+        "avg_similarity": 0.0648,
+        "avg_pred_length": 88.0
+      },
+      "tool use": {
+        "n": 211,
+        "avg_loss": 1.0338,
+        "avg_acc_loss": 0.8614,
+        "avg_util_loss": 0.8614,
+        "avg_lat_loss": 6.8924,
+        "avg_similarity": 0.1386,
+        "avg_pred_length": 139.6
+      }
+    }
+  },
+  {
+    "params": {
+      "alpha": 0.3,
+      "beta": 0.1,
+      "gamma": 0.1,
+      "kappa": 0.3,
+      "p": 3,
+      "tau_max": 40,
+      "tau_min": 5
+    },
+    "overall": {
+      "n": 4029,
+      "avg_loss": 0.7892,
+      "avg_acc_loss": 0.8975,
+      "avg_util_loss": 0.8975,
+      "avg_lat_loss": 4.3024,
+      "avg_similarity": 0.1025,
+      "avg_pred_length": 83.0
+    },
+    "by_split": {
+      "train": {
+        "n": 2746,
+        "avg_loss": 0.7943,
+        "avg_acc_loss": 0.8976,
+        "avg_util_loss": 0.8976,
+        "avg_lat_loss": 4.3524,
+        "avg_similarity": 0.1024,
+        "avg_pred_length": 82.5
+      },
+      "test": {
+        "n": 1283,
+        "avg_loss": 0.7784,
+        "avg_acc_loss": 0.8972,
+        "avg_util_loss": 0.8972,
+        "avg_lat_loss": 4.1955,
+        "avg_similarity": 0.1028,
+        "avg_pred_length": 84.1
+      }
+    },
+    "by_urgency": {
+      "not_urgent": {
+        "n": 1884,
+        "avg_loss": 0.3689,
+        "avg_acc_loss": 0.9222,
+        "avg_util_loss": 0.9222,
+        "avg_lat_loss": 0.0,
+        "avg_similarity": 0.0778,
+        "avg_pred_length": 110.4
+      },
+      "urgent": {
+        "n": 2142,
+        "avg_loss": 1.1595,
+        "avg_acc_loss": 0.8755,
+        "avg_util_loss": 0.8755,
+        "avg_lat_loss": 8.0926,
+        "avg_similarity": 0.1245,
+        "avg_pred_length": 58.9
+      },
+      "ERROR": {
+        "n": 3,
+        "avg_loss": 0.4,
+        "avg_acc_loss": 1.0,
+        "avg_util_loss": 1.0,
+        "avg_lat_loss": 0.0,
+        "avg_similarity": 0.0,
+        "avg_pred_length": 129.0
+      }
+    },
+    "by_type": {
+      "Information reading": {
+        "n": 1,
+        "avg_loss": 0.4512,
+        "avg_acc_loss": 1.0,
+        "avg_util_loss": 1.0,
+        "avg_lat_loss": 0.512,
+        "avg_similarity": 0.0,
+        "avg_pred_length": 33.0
+      },
+      "communication and interaction": {
+        "n": 81,
+        "avg_loss": 0.5443,
+        "avg_acc_loss": 0.9347,
+        "avg_util_loss": 0.9347,
+        "avg_lat_loss": 1.7037,
+        "avg_similarity": 0.0653,
+        "avg_pred_length": 80.4
+      },
+      "information reading": {
+        "n": 1873,
+        "avg_loss": 0.5805,
+        "avg_acc_loss": 0.9115,
+        "avg_util_loss": 0.9115,
+        "avg_lat_loss": 2.1589,
+        "avg_similarity": 0.0885,
+        "avg_pred_length": 80.4
+      },
+      "local navigation and positioning": {
+        "n": 363,
+        "avg_loss": 0.875,
+        "avg_acc_loss": 0.8828,
+        "avg_util_loss": 0.8828,
+        "avg_lat_loss": 5.2187,
+        "avg_similarity": 0.1172,
+        "avg_pred_length": 94.9
+      },
+      "navigation": {
+        "n": 196,
+        "avg_loss": 0.8185,
+        "avg_acc_loss": 0.8944,
+        "avg_util_loss": 0.8944,
+        "avg_lat_loss": 4.6069,
+        "avg_similarity": 0.1056,
+        "avg_pred_length": 94.7
+      },
+      "other resources": {
+        "n": 99,
+        "avg_loss": 0.5899,
+        "avg_acc_loss": 0.8939,
+        "avg_util_loss": 0.8939,
+        "avg_lat_loss": 2.3231,
+        "avg_similarity": 0.1061,
+        "avg_pred_length": 84.0
+      },
+      "resource acquisition and others": {
+        "n": 222,
+        "avg_loss": 0.5901,
+        "avg_acc_loss": 0.8878,
+        "avg_util_loss": 0.8878,
+        "avg_lat_loss": 2.3496,
+        "avg_similarity": 0.1122,
+        "avg_pred_length": 86.7
+      },
+      "safety warnings": {
+        "n": 946,
+        "avg_loss": 1.2071,
+        "avg_acc_loss": 0.8818,
+        "avg_util_loss": 0.8818,
+        "avg_lat_loss": 8.5444,
+        "avg_similarity": 0.1182,
+        "avg_pred_length": 67.7
+      },
+      "social communication": {
+        "n": 37,
+        "avg_loss": 0.5525,
+        "avg_acc_loss": 0.9352,
+        "avg_util_loss": 0.9352,
+        "avg_lat_loss": 1.7844,
+        "avg_similarity": 0.0648,
+        "avg_pred_length": 88.0
+      },
+      "tool use": {
+        "n": 211,
+        "avg_loss": 1.0338,
+        "avg_acc_loss": 0.8614,
+        "avg_util_loss": 0.8614,
+        "avg_lat_loss": 6.8924,
+        "avg_similarity": 0.1386,
+        "avg_pred_length": 139.6
+      }
+    }
+  },
+  {
+    "params": {
+      "alpha": 0.2,
+      "beta": 0.2,
+      "gamma": 0.1,
+      "kappa": 0.3,
+      "p": 3,
+      "tau_max": 40,
+      "tau_min": 3
+    },
+    "overall": {
+      "n": 4029,
+      "avg_loss": 0.7894,
+      "avg_acc_loss": 0.8975,
+      "avg_util_loss": 0.8975,
+      "avg_lat_loss": 4.3045,
+      "avg_similarity": 0.1025,
+      "avg_pred_length": 83.0
+    },
+    "by_split": {
+      "train": {
+        "n": 2746,
+        "avg_loss": 0.7945,
+        "avg_acc_loss": 0.8976,
+        "avg_util_loss": 0.8976,
+        "avg_lat_loss": 4.3546,
+        "avg_similarity": 0.1024,
+        "avg_pred_length": 82.5
+      },
+      "test": {
+        "n": 1283,
+        "avg_loss": 0.7786,
+        "avg_acc_loss": 0.8972,
+        "avg_util_loss": 0.8972,
+        "avg_lat_loss": 4.1974,
+        "avg_similarity": 0.1028,
+        "avg_pred_length": 84.1
+      }
+    },
+    "by_urgency": {
+      "not_urgent": {
+        "n": 1884,
+        "avg_loss": 0.3689,
+        "avg_acc_loss": 0.9222,
+        "avg_util_loss": 0.9222,
+        "avg_lat_loss": 0.0,
+        "avg_similarity": 0.0778,
+        "avg_pred_length": 110.4
+      },
+      "urgent": {
+        "n": 2142,
+        "avg_loss": 1.1599,
+        "avg_acc_loss": 0.8755,
+        "avg_util_loss": 0.8755,
+        "avg_lat_loss": 8.0966,
+        "avg_similarity": 0.1245,
+        "avg_pred_length": 58.9
+      },
+      "ERROR": {
+        "n": 3,
+        "avg_loss": 0.4,
+        "avg_acc_loss": 1.0,
+        "avg_util_loss": 1.0,
+        "avg_lat_loss": 0.0,
+        "avg_similarity": 0.0,
+        "avg_pred_length": 129.0
+      }
+    },
+    "by_type": {
+      "Information reading": {
+        "n": 1,
+        "avg_loss": 0.4533,
+        "avg_acc_loss": 1.0,
+        "avg_util_loss": 1.0,
+        "avg_lat_loss": 0.533,
+        "avg_similarity": 0.0,
+        "avg_pred_length": 33.0
+      },
+      "communication and interaction": {
+        "n": 81,
+        "avg_loss": 0.5445,
+        "avg_acc_loss": 0.9347,
+        "avg_util_loss": 0.9347,
+        "avg_lat_loss": 1.7063,
+        "avg_similarity": 0.0653,
+        "avg_pred_length": 80.4
+      },
+      "information reading": {
+        "n": 1873,
+        "avg_loss": 0.5807,
+        "avg_acc_loss": 0.9115,
+        "avg_util_loss": 0.9115,
+        "avg_lat_loss": 2.1607,
+        "avg_similarity": 0.0885,
+        "avg_pred_length": 80.4
+      },
+      "local navigation and positioning": {
+        "n": 363,
+        "avg_loss": 0.8751,
+        "avg_acc_loss": 0.8828,
+        "avg_util_loss": 0.8828,
+        "avg_lat_loss": 5.2199,
+        "avg_similarity": 0.1172,
+        "avg_pred_length": 94.9
+      },
+      "navigation": {
+        "n": 196,
+        "avg_loss": 0.8185,
+        "avg_acc_loss": 0.8944,
+        "avg_util_loss": 0.8944,
+        "avg_lat_loss": 4.6078,
+        "avg_similarity": 0.1056,
+        "avg_pred_length": 94.7
+      },
+      "other resources": {
+        "n": 99,
+        "avg_loss": 0.5902,
+        "avg_acc_loss": 0.8939,
+        "avg_util_loss": 0.8939,
+        "avg_lat_loss": 2.3262,
+        "avg_similarity": 0.1061,
+        "avg_pred_length": 84.0
+      },
+      "resource acquisition and others": {
+        "n": 222,
+        "avg_loss": 0.5903,
+        "avg_acc_loss": 0.8878,
+        "avg_util_loss": 0.8878,
+        "avg_lat_loss": 2.3513,
+        "avg_similarity": 0.1122,
+        "avg_pred_length": 86.7
+      },
+      "safety warnings": {
+        "n": 946,
+        "avg_loss": 1.2075,
+        "avg_acc_loss": 0.8818,
+        "avg_util_loss": 0.8818,
+        "avg_lat_loss": 8.5482,
+        "avg_similarity": 0.1182,
+        "avg_pred_length": 67.7
+      },
+      "social communication": {
+        "n": 37,
+        "avg_loss": 0.5526,
+        "avg_acc_loss": 0.9352,
+        "avg_util_loss": 0.9352,
+        "avg_lat_loss": 1.7852,
+        "avg_similarity": 0.0648,
+        "avg_pred_length": 88.0
+      },
+      "tool use": {
+        "n": 211,
+        "avg_loss": 1.0338,
+        "avg_acc_loss": 0.8614,
+        "avg_util_loss": 0.8614,
+        "avg_lat_loss": 6.8926,
+        "avg_similarity": 0.1386,
+        "avg_pred_length": 139.6
+      }
+    }
+  },
+  {
+    "params": {
+      "alpha": 0.3,
+      "beta": 0.1,
+      "gamma": 0.1,
+      "kappa": 0.3,
+      "p": 3,
+      "tau_max": 40,
+      "tau_min": 3
+    },
+    "overall": {
+      "n": 4029,
+      "avg_loss": 0.7894,
+      "avg_acc_loss": 0.8975,
+      "avg_util_loss": 0.8975,
+      "avg_lat_loss": 4.3045,
+      "avg_similarity": 0.1025,
+      "avg_pred_length": 83.0
+    },
+    "by_split": {
+      "train": {
+        "n": 2746,
+        "avg_loss": 0.7945,
+        "avg_acc_loss": 0.8976,
+        "avg_util_loss": 0.8976,
+        "avg_lat_loss": 4.3546,
+        "avg_similarity": 0.1024,
+        "avg_pred_length": 82.5
+      },
+      "test": {
+        "n": 1283,
+        "avg_loss": 0.7786,
+        "avg_acc_loss": 0.8972,
+        "avg_util_loss": 0.8972,
+        "avg_lat_loss": 4.1974,
+        "avg_similarity": 0.1028,
+        "avg_pred_length": 84.1
+      }
+    },
+    "by_urgency": {
+      "not_urgent": {
+        "n": 1884,
+        "avg_loss": 0.3689,
+        "avg_acc_loss": 0.9222,
+        "avg_util_loss": 0.9222,
+        "avg_lat_loss": 0.0,
+        "avg_similarity": 0.0778,
+        "avg_pred_length": 110.4
+      },
+      "urgent": {
+        "n": 2142,
+        "avg_loss": 1.1599,
+        "avg_acc_loss": 0.8755,
+        "avg_util_loss": 0.8755,
+        "avg_lat_loss": 8.0966,
+        "avg_similarity": 0.1245,
+        "avg_pred_length": 58.9
+      },
+      "ERROR": {
+        "n": 3,
+        "avg_loss": 0.4,
+        "avg_acc_loss": 1.0,
+        "avg_util_loss": 1.0,
+        "avg_lat_loss": 0.0,
+        "avg_similarity": 0.0,
+        "avg_pred_length": 129.0
+      }
+    },
+    "by_type": {
+      "Information reading": {
+        "n": 1,
+        "avg_loss": 0.4533,
+        "avg_acc_loss": 1.0,
+        "avg_util_loss": 1.0,
+        "avg_lat_loss": 0.533,
+        "avg_similarity": 0.0,
+        "avg_pred_length": 33.0
+      },
+      "communication and interaction": {
+        "n": 81,
+        "avg_loss": 0.5445,
+        "avg_acc_loss": 0.9347,
+        "avg_util_loss": 0.9347,
+        "avg_lat_loss": 1.7063,
+        "avg_similarity": 0.0653,
+        "avg_pred_length": 80.4
+      },
+      "information reading": {
+        "n": 1873,
+        "avg_loss": 0.5807,
+        "avg_acc_loss": 0.9115,
+        "avg_util_loss": 0.9115,
+        "avg_lat_loss": 2.1607,
+        "avg_similarity": 0.0885,
+        "avg_pred_length": 80.4
+      },
+      "local navigation and positioning": {
+        "n": 363,
+        "avg_loss": 0.8751,
+        "avg_acc_loss": 0.8828,
+        "avg_util_loss": 0.8828,
+        "avg_lat_loss": 5.2199,
+        "avg_similarity": 0.1172,
+        "avg_pred_length": 94.9
+      },
+      "navigation": {
+        "n": 196,
+        "avg_loss": 0.8185,
+        "avg_acc_loss": 0.8944,
+        "avg_util_loss": 0.8944,
+        "avg_lat_loss": 4.6078,
+        "avg_similarity": 0.1056,
+        "avg_pred_length": 94.7
+      },
+      "other resources": {
+        "n": 99,
+        "avg_loss": 0.5902,
+        "avg_acc_loss": 0.8939,
+        "avg_util_loss": 0.8939,
+        "avg_lat_loss": 2.3262,
+        "avg_similarity": 0.1061,
+        "avg_pred_length": 84.0
+      },
+      "resource acquisition and others": {
+        "n": 222,
+        "avg_loss": 0.5903,
+        "avg_acc_loss": 0.8878,
+        "avg_util_loss": 0.8878,
+        "avg_lat_loss": 2.3513,
+        "avg_similarity": 0.1122,
+        "avg_pred_length": 86.7
+      },
+      "safety warnings": {
+        "n": 946,
+        "avg_loss": 1.2075,
+        "avg_acc_loss": 0.8818,
+        "avg_util_loss": 0.8818,
+        "avg_lat_loss": 8.5482,
+        "avg_similarity": 0.1182,
+        "avg_pred_length": 67.7
+      },
+      "social communication": {
+        "n": 37,
+        "avg_loss": 0.5526,
+        "avg_acc_loss": 0.9352,
+        "avg_util_loss": 0.9352,
+        "avg_lat_loss": 1.7852,
+        "avg_similarity": 0.0648,
+        "avg_pred_length": 88.0
+      },
+      "tool use": {
+        "n": 211,
+        "avg_loss": 1.0338,
+        "avg_acc_loss": 0.8614,
+        "avg_util_loss": 0.8614,
+        "avg_lat_loss": 6.8926,
+        "avg_similarity": 0.1386,
+        "avg_pred_length": 139.6
+      }
+    }
+  },
+  {
+    "params": {
+      "alpha": 0.2,
+      "beta": 0.2,
+      "gamma": 0.1,
+      "kappa": 0.3,
+      "p": 2,
+      "tau_max": 40,
+      "tau_min": 8
+    },
+    "overall": {
+      "n": 4029,
+      "avg_loss": 0.7901,
+      "avg_acc_loss": 0.8975,
+      "avg_util_loss": 0.8975,
+      "avg_lat_loss": 4.3108,
+      "avg_similarity": 0.1025,
+      "avg_pred_length": 83.0
+    },
+    "by_split": {
+      "train": {
+        "n": 2746,
+        "avg_loss": 0.7952,
+        "avg_acc_loss": 0.8976,
+        "avg_util_loss": 0.8976,
+        "avg_lat_loss": 4.3611,
+        "avg_similarity": 0.1024,
+        "avg_pred_length": 82.5
+      },
+      "test": {
+        "n": 1283,
+        "avg_loss": 0.7792,
+        "avg_acc_loss": 0.8972,
+        "avg_util_loss": 0.8972,
+        "avg_lat_loss": 4.2031,
+        "avg_similarity": 0.1028,
+        "avg_pred_length": 84.1
+      }
+    },
+    "by_urgency": {
+      "not_urgent": {
+        "n": 1884,
+        "avg_loss": 0.3689,
+        "avg_acc_loss": 0.9222,
+        "avg_util_loss": 0.9222,
+        "avg_lat_loss": 0.0,
+        "avg_similarity": 0.0778,
+        "avg_pred_length": 110.4
+      },
+      "urgent": {
+        "n": 2142,
+        "avg_loss": 1.1611,
+        "avg_acc_loss": 0.8755,
+        "avg_util_loss": 0.8755,
+        "avg_lat_loss": 8.1084,
+        "avg_similarity": 0.1245,
+        "avg_pred_length": 58.9
+      },
+      "ERROR": {
+        "n": 3,
+        "avg_loss": 0.4,
+        "avg_acc_loss": 1.0,
+        "avg_util_loss": 1.0,
+        "avg_lat_loss": 0.0,
+        "avg_similarity": 0.0,
+        "avg_pred_length": 129.0
+      }
+    },
+    "by_type": {
+      "Information reading": {
+        "n": 1,
+        "avg_loss": 0.461,
+        "avg_acc_loss": 1.0,
+        "avg_util_loss": 1.0,
+        "avg_lat_loss": 0.6104,
+        "avg_similarity": 0.0,
+        "avg_pred_length": 33.0
+      },
+      "communication and interaction": {
+        "n": 81,
+        "avg_loss": 0.5453,
+        "avg_acc_loss": 0.9347,
+        "avg_util_loss": 0.9347,
+        "avg_lat_loss": 1.7138,
+        "avg_similarity": 0.0653,
+        "avg_pred_length": 80.4
+      },
+      "information reading": {
+        "n": 1873,
+        "avg_loss": 0.5812,
+        "avg_acc_loss": 0.9115,
+        "avg_util_loss": 0.9115,
+        "avg_lat_loss": 2.1661,
+        "avg_similarity": 0.0885,
+        "avg_pred_length": 80.4
+      },
+      "local navigation and positioning": {
+        "n": 363,
+        "avg_loss": 0.8755,
+        "avg_acc_loss": 0.8828,
+        "avg_util_loss": 0.8828,
+        "avg_lat_loss": 5.2236,
+        "avg_similarity": 0.1172,
+        "avg_pred_length": 94.9
+      },
+      "navigation": {
+        "n": 196,
+        "avg_loss": 0.8188,
+        "avg_acc_loss": 0.8944,
+        "avg_util_loss": 0.8944,
+        "avg_lat_loss": 4.6108,
+        "avg_similarity": 0.1056,
+        "avg_pred_length": 94.7
+      },
+      "other resources": {
+        "n": 99,
+        "avg_loss": 0.591,
+        "avg_acc_loss": 0.8939,
+        "avg_util_loss": 0.8939,
+        "avg_lat_loss": 2.3346,
+        "avg_similarity": 0.1061,
+        "avg_pred_length": 84.0
+      },
+      "resource acquisition and others": {
+        "n": 222,
+        "avg_loss": 0.5908,
+        "avg_acc_loss": 0.8878,
+        "avg_util_loss": 0.8878,
+        "avg_lat_loss": 2.3563,
+        "avg_similarity": 0.1122,
+        "avg_pred_length": 86.7
+      },
+      "safety warnings": {
+        "n": 946,
+        "avg_loss": 1.2086,
+        "avg_acc_loss": 0.8818,
+        "avg_util_loss": 0.8818,
+        "avg_lat_loss": 8.5593,
+        "avg_similarity": 0.1182,
+        "avg_pred_length": 67.7
+      },
+      "social communication": {
+        "n": 37,
+        "avg_loss": 0.5527,
+        "avg_acc_loss": 0.9352,
+        "avg_util_loss": 0.9352,
+        "avg_lat_loss": 1.7866,
+        "avg_similarity": 0.0648,
+        "avg_pred_length": 88.0
+      },
+      "tool use": {
+        "n": 211,
+        "avg_loss": 1.0339,
+        "avg_acc_loss": 0.8614,
+        "avg_util_loss": 0.8614,
+        "avg_lat_loss": 6.893,
+        "avg_similarity": 0.1386,
+        "avg_pred_length": 139.6
+      }
+    }
+  },
+  {
+    "params": {
+      "alpha": 0.3,
+      "beta": 0.1,
+      "gamma": 0.1,
+      "kappa": 0.3,
+      "p": 2,
+      "tau_max": 40,
+      "tau_min": 8
+    },
+    "overall": {
+      "n": 4029,
+      "avg_loss": 0.7901,
+      "avg_acc_loss": 0.8975,
+      "avg_util_loss": 0.8975,
+      "avg_lat_loss": 4.3108,
+      "avg_similarity": 0.1025,
+      "avg_pred_length": 83.0
+    },
+    "by_split": {
+      "train": {
+        "n": 2746,
+        "avg_loss": 0.7952,
+        "avg_acc_loss": 0.8976,
+        "avg_util_loss": 0.8976,
+        "avg_lat_loss": 4.3611,
+        "avg_similarity": 0.1024,
+        "avg_pred_length": 82.5
+      },
+      "test": {
+        "n": 1283,
+        "avg_loss": 0.7792,
+        "avg_acc_loss": 0.8972,
+        "avg_util_loss": 0.8972,
+        "avg_lat_loss": 4.2031,
+        "avg_similarity": 0.1028,
+        "avg_pred_length": 84.1
+      }
+    },
+    "by_urgency": {
+      "not_urgent": {
+        "n": 1884,
+        "avg_loss": 0.3689,
+        "avg_acc_loss": 0.9222,
+        "avg_util_loss": 0.9222,
+        "avg_lat_loss": 0.0,
+        "avg_similarity": 0.0778,
+        "avg_pred_length": 110.4
+      },
+      "urgent": {
+        "n": 2142,
+        "avg_loss": 1.1611,
+        "avg_acc_loss": 0.8755,
+        "avg_util_loss": 0.8755,
+        "avg_lat_loss": 8.1084,
+        "avg_similarity": 0.1245,
+        "avg_pred_length": 58.9
+      },
+      "ERROR": {
+        "n": 3,
+        "avg_loss": 0.4,
+        "avg_acc_loss": 1.0,
+        "avg_util_loss": 1.0,
+        "avg_lat_loss": 0.0,
+        "avg_similarity": 0.0,
+        "avg_pred_length": 129.0
+      }
+    },
+    "by_type": {
+      "Information reading": {
+        "n": 1,
+        "avg_loss": 0.461,
+        "avg_acc_loss": 1.0,
+        "avg_util_loss": 1.0,
+        "avg_lat_loss": 0.6104,
+        "avg_similarity": 0.0,
+        "avg_pred_length": 33.0
+      },
+      "communication and interaction": {
+        "n": 81,
+        "avg_loss": 0.5453,
+        "avg_acc_loss": 0.9347,
+        "avg_util_loss": 0.9347,
+        "avg_lat_loss": 1.7138,
+        "avg_similarity": 0.0653,
+        "avg_pred_length": 80.4
+      },
+      "information reading": {
+        "n": 1873,
+        "avg_loss": 0.5812,
+        "avg_acc_loss": 0.9115,
+        "avg_util_loss": 0.9115,
+        "avg_lat_loss": 2.1661,
+        "avg_similarity": 0.0885,
+        "avg_pred_length": 80.4
+      },
+      "local navigation and positioning": {
+        "n": 363,
+        "avg_loss": 0.8755,
+        "avg_acc_loss": 0.8828,
+        "avg_util_loss": 0.8828,
+        "avg_lat_loss": 5.2236,
+        "avg_similarity": 0.1172,
+        "avg_pred_length": 94.9
+      },
+      "navigation": {
+        "n": 196,
+        "avg_loss": 0.8188,
+        "avg_acc_loss": 0.8944,
+        "avg_util_loss": 0.8944,
+        "avg_lat_loss": 4.6108,
+        "avg_similarity": 0.1056,
+        "avg_pred_length": 94.7
+      },
+      "other resources": {
+        "n": 99,
+        "avg_loss": 0.591,
+        "avg_acc_loss": 0.8939,
+        "avg_util_loss": 0.8939,
+        "avg_lat_loss": 2.3346,
+        "avg_similarity": 0.1061,
+        "avg_pred_length": 84.0
+      },
+      "resource acquisition and others": {
+        "n": 222,
+        "avg_loss": 0.5908,
+        "avg_acc_loss": 0.8878,
+        "avg_util_loss": 0.8878,
+        "avg_lat_loss": 2.3563,
+        "avg_similarity": 0.1122,
+        "avg_pred_length": 86.7
+      },
+      "safety warnings": {
+        "n": 946,
+        "avg_loss": 1.2086,
+        "avg_acc_loss": 0.8818,
+        "avg_util_loss": 0.8818,
+        "avg_lat_loss": 8.5593,
+        "avg_similarity": 0.1182,
+        "avg_pred_length": 67.7
+      },
+      "social communication": {
+        "n": 37,
+        "avg_loss": 0.5527,
+        "avg_acc_loss": 0.9352,
+        "avg_util_loss": 0.9352,
+        "avg_lat_loss": 1.7866,
+        "avg_similarity": 0.0648,
+        "avg_pred_length": 88.0
+      },
+      "tool use": {
+        "n": 211,
+        "avg_loss": 1.0339,
+        "avg_acc_loss": 0.8614,
+        "avg_util_loss": 0.8614,
+        "avg_lat_loss": 6.893,
+        "avg_similarity": 0.1386,
+        "avg_pred_length": 139.6
+      }
+    }
+  },
+  {
+    "params": {
+      "alpha": 0.2,
+      "beta": 0.2,
+      "gamma": 0.1,
+      "kappa": 0.3,
+      "p": 2,
+      "tau_max": 40,
+      "tau_min": 5
+    },
+    "overall": {
+      "n": 4029,
+      "avg_loss": 0.7905,
+      "avg_acc_loss": 0.8975,
+      "avg_util_loss": 0.8975,
+      "avg_lat_loss": 4.315,
+      "avg_similarity": 0.1025,
+      "avg_pred_length": 83.0
+    },
+    "by_split": {
+      "train": {
+        "n": 2746,
+        "avg_loss": 0.7956,
+        "avg_acc_loss": 0.8976,
+        "avg_util_loss": 0.8976,
+        "avg_lat_loss": 4.3655,
+        "avg_similarity": 0.1024,
+        "avg_pred_length": 82.5
+      },
+      "test": {
+        "n": 1283,
+        "avg_loss": 0.7796,
+        "avg_acc_loss": 0.8972,
+        "avg_util_loss": 0.8972,
+        "avg_lat_loss": 4.2068,
+        "avg_similarity": 0.1028,
+        "avg_pred_length": 84.1
+      }
+    },
+    "by_urgency": {
+      "not_urgent": {
+        "n": 1884,
+        "avg_loss": 0.3689,
+        "avg_acc_loss": 0.9222,
+        "avg_util_loss": 0.9222,
+        "avg_lat_loss": 0.0,
+        "avg_similarity": 0.0778,
+        "avg_pred_length": 110.4
+      },
+      "urgent": {
+        "n": 2142,
+        "avg_loss": 1.1618,
+        "avg_acc_loss": 0.8755,
+        "avg_util_loss": 0.8755,
+        "avg_lat_loss": 8.1162,
+        "avg_similarity": 0.1245,
+        "avg_pred_length": 58.9
+      },
+      "ERROR": {
+        "n": 3,
+        "avg_loss": 0.4,
+        "avg_acc_loss": 1.0,
+        "avg_util_loss": 1.0,
+        "avg_lat_loss": 0.0,
+        "avg_similarity": 0.0,
+        "avg_pred_length": 129.0
+      }
+    },
+    "by_type": {
+      "Information reading": {
+        "n": 1,
+        "avg_loss": 0.464,
+        "avg_acc_loss": 1.0,
+        "avg_util_loss": 1.0,
+        "avg_lat_loss": 0.64,
+        "avg_similarity": 0.0,
+        "avg_pred_length": 33.0
+      },
+      "communication and interaction": {
+        "n": 81,
+        "avg_loss": 0.5458,
+        "avg_acc_loss": 0.9347,
+        "avg_util_loss": 0.9347,
+        "avg_lat_loss": 1.7191,
+        "avg_similarity": 0.0653,
+        "avg_pred_length": 80.4
+      },
+      "information reading": {
+        "n": 1873,
+        "avg_loss": 0.5816,
+        "avg_acc_loss": 0.9115,
+        "avg_util_loss": 0.9115,
+        "avg_lat_loss": 2.1697,
+        "avg_similarity": 0.0885,
+        "avg_pred_length": 80.4
+      },
+      "local navigation and positioning": {
+        "n": 363,
+        "avg_loss": 0.8757,
+        "avg_acc_loss": 0.8828,
+        "avg_util_loss": 0.8828,
+        "avg_lat_loss": 5.2258,
+        "avg_similarity": 0.1172,
+        "avg_pred_length": 94.9
+      },
+      "navigation": {
+        "n": 196,
+        "avg_loss": 0.819,
+        "avg_acc_loss": 0.8944,
+        "avg_util_loss": 0.8944,
+        "avg_lat_loss": 4.6122,
+        "avg_similarity": 0.1056,
+        "avg_pred_length": 94.7
+      },
+      "other resources": {
+        "n": 99,
+        "avg_loss": 0.5916,
+        "avg_acc_loss": 0.8939,
+        "avg_util_loss": 0.8939,
+        "avg_lat_loss": 2.3407,
+        "avg_similarity": 0.1061,
+        "avg_pred_length": 84.0
+      },
+      "resource acquisition and others": {
+        "n": 222,
+        "avg_loss": 0.5911,
+        "avg_acc_loss": 0.8878,
+        "avg_util_loss": 0.8878,
+        "avg_lat_loss": 2.3596,
+        "avg_similarity": 0.1122,
+        "avg_pred_length": 86.7
+      },
+      "safety warnings": {
+        "n": 946,
+        "avg_loss": 1.2094,
+        "avg_acc_loss": 0.8818,
+        "avg_util_loss": 0.8818,
+        "avg_lat_loss": 8.5665,
+        "avg_similarity": 0.1182,
+        "avg_pred_length": 67.7
+      },
+      "social communication": {
+        "n": 37,
+        "avg_loss": 0.5529,
+        "avg_acc_loss": 0.9352,
+        "avg_util_loss": 0.9352,
+        "avg_lat_loss": 1.7888,
+        "avg_similarity": 0.0648,
+        "avg_pred_length": 88.0
+      },
+      "tool use": {
+        "n": 211,
+        "avg_loss": 1.0339,
+        "avg_acc_loss": 0.8614,
+        "avg_util_loss": 0.8614,
+        "avg_lat_loss": 6.8935,
+        "avg_similarity": 0.1386,
+        "avg_pred_length": 139.6
+      }
+    }
+  },
+  {
+    "params": {
+      "alpha": 0.3,
+      "beta": 0.1,
+      "gamma": 0.1,
+      "kappa": 0.3,
+      "p": 2,
+      "tau_max": 40,
+      "tau_min": 5
+    },
+    "overall": {
+      "n": 4029,
+      "avg_loss": 0.7905,
+      "avg_acc_loss": 0.8975,
+      "avg_util_loss": 0.8975,
+      "avg_lat_loss": 4.315,
+      "avg_similarity": 0.1025,
+      "avg_pred_length": 83.0
+    },
+    "by_split": {
+      "train": {
+        "n": 2746,
+        "avg_loss": 0.7956,
+        "avg_acc_loss": 0.8976,
+        "avg_util_loss": 0.8976,
+        "avg_lat_loss": 4.3655,
+        "avg_similarity": 0.1024,
+        "avg_pred_length": 82.5
+      },
+      "test": {
+        "n": 1283,
+        "avg_loss": 0.7796,
+        "avg_acc_loss": 0.8972,
+        "avg_util_loss": 0.8972,
+        "avg_lat_loss": 4.2068,
+        "avg_similarity": 0.1028,
+        "avg_pred_length": 84.1
+      }
+    },
+    "by_urgency": {
+      "not_urgent": {
+        "n": 1884,
+        "avg_loss": 0.3689,
+        "avg_acc_loss": 0.9222,
+        "avg_util_loss": 0.9222,
+        "avg_lat_loss": 0.0,
+        "avg_similarity": 0.0778,
+        "avg_pred_length": 110.4
+      },
+      "urgent": {
+        "n": 2142,
+        "avg_loss": 1.1618,
+        "avg_acc_loss": 0.8755,
+        "avg_util_loss": 0.8755,
+        "avg_lat_loss": 8.1162,
+        "avg_similarity": 0.1245,
+        "avg_pred_length": 58.9
+      },
+      "ERROR": {
+        "n": 3,
+        "avg_loss": 0.4,
+        "avg_acc_loss": 1.0,
+        "avg_util_loss": 1.0,
+        "avg_lat_loss": 0.0,
+        "avg_similarity": 0.0,
+        "avg_pred_length": 129.0
+      }
+    },
+    "by_type": {
+      "Information reading": {
+        "n": 1,
+        "avg_loss": 0.464,
+        "avg_acc_loss": 1.0,
+        "avg_util_loss": 1.0,
+        "avg_lat_loss": 0.64,
+        "avg_similarity": 0.0,
+        "avg_pred_length": 33.0
+      },
+      "communication and interaction": {
+        "n": 81,
+        "avg_loss": 0.5458,
+        "avg_acc_loss": 0.9347,
+        "avg_util_loss": 0.9347,
+        "avg_lat_loss": 1.7191,
+        "avg_similarity": 0.0653,
+        "avg_pred_length": 80.4
+      },
+      "information reading": {
+        "n": 1873,
+        "avg_loss": 0.5816,
+        "avg_acc_loss": 0.9115,
+        "avg_util_loss": 0.9115,
+        "avg_lat_loss": 2.1697,
+        "avg_similarity": 0.0885,
+        "avg_pred_length": 80.4
+      },
+      "local navigation and positioning": {
+        "n": 363,
+        "avg_loss": 0.8757,
+        "avg_acc_loss": 0.8828,
+        "avg_util_loss": 0.8828,
+        "avg_lat_loss": 5.2258,
+        "avg_similarity": 0.1172,
+        "avg_pred_length": 94.9
+      },
+      "navigation": {
+        "n": 196,
+        "avg_loss": 0.819,
+        "avg_acc_loss": 0.8944,
+        "avg_util_loss": 0.8944,
+        "avg_lat_loss": 4.6122,
+        "avg_similarity": 0.1056,
+        "avg_pred_length": 94.7
+      },
+      "other resources": {
+        "n": 99,
+        "avg_loss": 0.5916,
+        "avg_acc_loss": 0.8939,
+        "avg_util_loss": 0.8939,
+        "avg_lat_loss": 2.3407,
+        "avg_similarity": 0.1061,
+        "avg_pred_length": 84.0
+      },
+      "resource acquisition and others": {
+        "n": 222,
+        "avg_loss": 0.5911,
+        "avg_acc_loss": 0.8878,
+        "avg_util_loss": 0.8878,
+        "avg_lat_loss": 2.3596,
+        "avg_similarity": 0.1122,
+        "avg_pred_length": 86.7
+      },
+      "safety warnings": {
+        "n": 946,
+        "avg_loss": 1.2094,
+        "avg_acc_loss": 0.8818,
+        "avg_util_loss": 0.8818,
+        "avg_lat_loss": 8.5665,
+        "avg_similarity": 0.1182,
+        "avg_pred_length": 67.7
+      },
+      "social communication": {
+        "n": 37,
+        "avg_loss": 0.5529,
+        "avg_acc_loss": 0.9352,
+        "avg_util_loss": 0.9352,
+        "avg_lat_loss": 1.7888,
+        "avg_similarity": 0.0648,
+        "avg_pred_length": 88.0
+      },
+      "tool use": {
+        "n": 211,
+        "avg_loss": 1.0339,
+        "avg_acc_loss": 0.8614,
+        "avg_util_loss": 0.8614,
+        "avg_lat_loss": 6.8935,
+        "avg_similarity": 0.1386,
+        "avg_pred_length": 139.6
+      }
+    }
+  },
+  {
+    "params": {
+      "alpha": 0.2,
+      "beta": 0.2,
+      "gamma": 0.1,
+      "kappa": 0.3,
+      "p": 2,
+      "tau_max": 40,
+      "tau_min": 3
+    },
+    "overall": {
+      "n": 4029,
+      "avg_loss": 0.7908,
+      "avg_acc_loss": 0.8975,
+      "avg_util_loss": 0.8975,
+      "avg_lat_loss": 4.3178,
+      "avg_similarity": 0.1025,
+      "avg_pred_length": 83.0
+    },
+    "by_split": {
+      "train": {
+        "n": 2746,
+        "avg_loss": 0.7959,
+        "avg_acc_loss": 0.8976,
+        "avg_util_loss": 0.8976,
+        "avg_lat_loss": 4.3684,
+        "avg_similarity": 0.1024,
+        "avg_pred_length": 82.5
+      },
+      "test": {
+        "n": 1283,
+        "avg_loss": 0.7798,
+        "avg_acc_loss": 0.8972,
+        "avg_util_loss": 0.8972,
+        "avg_lat_loss": 4.2094,
+        "avg_similarity": 0.1028,
+        "avg_pred_length": 84.1
+      }
+    },
+    "by_urgency": {
+      "not_urgent": {
+        "n": 1884,
+        "avg_loss": 0.3689,
+        "avg_acc_loss": 0.9222,
+        "avg_util_loss": 0.9222,
+        "avg_lat_loss": 0.0,
+        "avg_similarity": 0.0778,
+        "avg_pred_length": 110.4
+      },
+      "urgent": {
+        "n": 2142,
+        "avg_loss": 1.1624,
+        "avg_acc_loss": 0.8755,
+        "avg_util_loss": 0.8755,
+        "avg_lat_loss": 8.1215,
+        "avg_similarity": 0.1245,
+        "avg_pred_length": 58.9
+      },
+      "ERROR": {
+        "n": 3,
+        "avg_loss": 0.4,
+        "avg_acc_loss": 1.0,
+        "avg_util_loss": 1.0,
+        "avg_lat_loss": 0.0,
+        "avg_similarity": 0.0,
+        "avg_pred_length": 129.0
+      }
+    },
+    "by_type": {
+      "Information reading": {
+        "n": 1,
+        "avg_loss": 0.4657,
+        "avg_acc_loss": 1.0,
+        "avg_util_loss": 1.0,
+        "avg_lat_loss": 0.6574,
+        "avg_similarity": 0.0,
+        "avg_pred_length": 33.0
+      },
+      "communication and interaction": {
+        "n": 81,
+        "avg_loss": 0.5462,
+        "avg_acc_loss": 0.9347,
+        "avg_util_loss": 0.9347,
+        "avg_lat_loss": 1.7231,
+        "avg_similarity": 0.0653,
+        "avg_pred_length": 80.4
+      },
+      "information reading": {
+        "n": 1873,
+        "avg_loss": 0.5819,
+        "avg_acc_loss": 0.9115,
+        "avg_util_loss": 0.9115,
+        "avg_lat_loss": 2.1724,
+        "avg_similarity": 0.0885,
+        "avg_pred_length": 80.4
+      },
+      "local navigation and positioning": {
+        "n": 363,
+        "avg_loss": 0.8758,
+        "avg_acc_loss": 0.8828,
+        "avg_util_loss": 0.8828,
+        "avg_lat_loss": 5.2273,
+        "avg_similarity": 0.1172,
+        "avg_pred_length": 94.9
+      },
+      "navigation": {
+        "n": 196,
+        "avg_loss": 0.8191,
+        "avg_acc_loss": 0.8944,
+        "avg_util_loss": 0.8944,
+        "avg_lat_loss": 4.6132,
+        "avg_similarity": 0.1056,
+        "avg_pred_length": 94.7
+      },
+      "other resources": {
+        "n": 99,
+        "avg_loss": 0.592,
+        "avg_acc_loss": 0.8939,
+        "avg_util_loss": 0.8939,
+        "avg_lat_loss": 2.3448,
+        "avg_similarity": 0.1061,
+        "avg_pred_length": 84.0
+      },
+      "resource acquisition and others": {
+        "n": 222,
+        "avg_loss": 0.5913,
+        "avg_acc_loss": 0.8878,
+        "avg_util_loss": 0.8878,
+        "avg_lat_loss": 2.3618,
+        "avg_similarity": 0.1122,
+        "avg_pred_length": 86.7
+      },
+      "safety warnings": {
+        "n": 946,
+        "avg_loss": 1.2098,
+        "avg_acc_loss": 0.8818,
+        "avg_util_loss": 0.8818,
+        "avg_lat_loss": 8.571,
+        "avg_similarity": 0.1182,
+        "avg_pred_length": 67.7
+      },
+      "social communication": {
+        "n": 37,
+        "avg_loss": 0.5531,
+        "avg_acc_loss": 0.9352,
+        "avg_util_loss": 0.9352,
+        "avg_lat_loss": 1.7904,
+        "avg_similarity": 0.0648,
+        "avg_pred_length": 88.0
+      },
+      "tool use": {
+        "n": 211,
+        "avg_loss": 1.0339,
+        "avg_acc_loss": 0.8614,
+        "avg_util_loss": 0.8614,
+        "avg_lat_loss": 6.8939,
+        "avg_similarity": 0.1386,
+        "avg_pred_length": 139.6
+      }
+    }
+  }
+]

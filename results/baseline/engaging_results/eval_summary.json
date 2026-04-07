@@ -1,0 +1,18 @@
+{
+  "ours": {
+    "overall_loss": 4.5697,
+    "overall_sim": 0.0944,
+    "overall_len": 75.7,
+    "urgent_loss": 8.2001,
+    "urgent_sim": 0.0844,
+    "nonurgent_loss": 0.6263,
+    "nonurgent_sim": 0.1053,
+    "n_total": 1283,
+    "n_urgent": 668,
+    "n_nonurgent": 615
+  },
+  "baseline": {
+    "overall_loss": 3.247,
+    "overall_sim": 0.1028
+  }
+}
