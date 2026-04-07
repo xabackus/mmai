@@ -8,7 +8,7 @@ I'm an MIT undergrad pursuing a BS in AI and Decision Making + Mathematics (with
 
 ## How this repo is organized
 
-Each homework builds toward the final project. The assignments aren't isolated exercises — they're iterative experiments on the same dataset (EgoBlind) that evolved into a full research project.
+Each homework builds toward the final project.
 
 ```
 mmai/
