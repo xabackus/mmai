@@ -1,183 +1,92 @@
-# EgoBlind-RA
+# EgoBlind-RA: Risk-Adaptive Egocentric Visual Assistance for Blind Users
 
-Risk-adaptive egocentric visual assistance for blind and low-vision users. Classifies queries by urgency and routes them to response policies matched to safety stakes. Evaluated on the [EgoBlind benchmark](https://arxiv.org/abs/2503.08221).
+**Xander Backus** and **Julia Kim** · MAS.S60 / 6.S985 · Spring 2026
 
-**Julia Kim & Xander Backus** · MIT · Equal contribution
+Blind users wearing cameras ask questions about their surroundings. Some questions are urgent ("Is there a step in front of me?"), others are not ("What brand of cereal is this?"). Current VLMs treat both identically. EgoBlind-RA classifies query urgency from video + text, then routes to a response calibrated to the safety stakes.
 
-## Overview
-
-Existing multimodal models apply a single inference policy across all queries, ignoring variability in urgency and risk. EgoBlind-RA addresses this by classifying each query as *urgent* or *non-urgent* and routing it accordingly:
-
-- **Urgent queries** (navigation hazards, safety-critical) → low-latency, conservative guidance
-- **Non-urgent queries** → additional computation for higher-quality answers
-
-We implement and compare two architectures:
-
-| | Approach 1: Xander | Approach 2: Julia |
-|-|---------------------|---------------------|
-| Models | Two separate LoRA adapters | One single LoRA adapter |
-| Routing | Classifier → different models | Classifier → different system prompts |
-| SFT | Two training runs (urgent, non-urgent) | One training run (mixed, tagged) |
-| DPO | On urgent model only | On unified model with `[URGENT]` tag |
-| Inference VRAM | 2× model loads | 1× model load |
-
-The core question: can a single model learn to behave differently based on an urgency tag, or does hard-routing to specialized models produce better results?
-
-## Repo structure
+## Architecture
 
 ```
-EgoBlind-RA/
-├── data/
-│   ├── train_labeled.csv              # GPT-annotated urgency labels (train)
-│   ├── test_labeled.csv               # GPT-annotated urgency labels (test)
-│   └── baseline_frames/               # extracted video frames for baseline eval
-├── docs/
-│   ├── project_proposal.pdf
-│   └── midterm_report.pdf
-├── models/
-│   └── CLIP_Urgency_Classifier.ipynb  # CLIP-based binary urgency classifier
-├── scripts/
-│   ├── classify_urgency.py            # GPT labeling pipeline (teacher model)
-│   ├── prepare_egoblind_data.py       # dataset preprocessing + urgency tagging
-│   ├── inference.py                   # single-model inference with tag routing
-│   ├── generate_dpo_pairs.py          # DPO pair construction with composite loss
-│   ├── kimi_api_baseline.py           # Kimi API baseline evaluation
-│   ├── aws_setup.sh                   # AWS spot instance setup
-│   └── remote_setup.sh                # remote environment setup
-├── results/
-│   └── baseline/
-│       ├── all_results.json
-│       ├── baseline_predictions.json
-│       ├── best_config_breakdown.json
-│       ├── top_20_results.json
-│       └── summary_table.tsv
-├── LICENSE
-└── README.md
+Video + Question → CLIP Classifier (frozen ViT-B/32 + MLP) → urgency prediction
+                                                                    │
+                              ┌─────────────────────────────────────┴──────────────────────┐
+                              ▼                                                            ▼
+                     Approach 1 (Xander)                                         Approach 2 (Julia)
+                     Separate LoRA adapters                                      Single LoRA adapter
+                     urgent → SFT adapter                                        [URGENT]/[NON-URGENT]
+                     non-urgent → SFT+DPO adapter                                prompt tag conditioning
+                              │                                                            │
+                              └─────────────────────────────────────┬──────────────────────┘
+                                                                    ▼
+                                                        Urgency-calibrated response
 ```
 
-## Data
-The dataset is derived from the **EgoBlind** project (Xiao et al., 2025).  As described [here](https://github.com/doc-doc/EgoBlind), the data is characterised by: 
-
-- **Regions of Interest (ROI):** Often off-center and not well-focused, reflecting the challenges of egocentric visual perception.  
-- **Questions:** Formulated to capture user intention in specific situations. They may be ambiguous if spatial and temporal context is ignored.  
-- **Answers:** Must be not only visually correct but also contextually helpful to the user, considering both space and time.  
-
-![egoblind](https://github.com/user-attachments/assets/eaeae917-ffab-47f3-a68d-cca74118fcde)
-*(Source: [EgoBlind GitHub](https://github.com/doc-doc/EgoBlind))*
-
-## Pipeline
-
-### 1. Urgency annotation (teacher)
-
-`classify_urgency.py` uses GPT to label every question–video pair in EgoBlind as `urgent` or `non-urgent` based on immediate physical safety implications for a blind user. A statistically significant subset is manually validated for agreement.
-
-### 2. Urgency classifier (student)
-
-`models/CLIP_Urgency_Classifier.ipynb` trains a lightweight CLIP-based binary classifier on the annotated labels. The model encodes both the video (sampled frames via ViT) and the text query, fuses the representations, and predicts urgency. Evaluated with F1 to balance precision and recall — false negatives in safety-critical cases are especially costly.
-
-### 3. Routing + response policies
-
-At inference time, the urgency classifier routes each query:
-
-```
-EgoBlind query
-      │
-      ▼
-CLIP urgency classifier
-      │
-   urgent?
-   /      \
-  yes      no
-  │         │
-low-latency  best-of-k
- policy      policy
-      │         │
-      └────┬────┘
-           ▼
-     EgoBlind metrics
-```
-
-**Approach 1 (Xander):** hard-routes to two separate fine-tuned LoRA adapters with regime-specific loss functions.
-
-**Approach 2 (Julia):** appends `[URGENT]` or `[NON-URGENT]` tag to a single LoRA adapter trained on a mixed objective.
-
-## Metrics
-
-| Component | Metric |
-|---|---|
-| Urgency classifier | F1 |
-| Generative model | Accuracy + utility score (EgoBlind) |
-| Urgent responses | Latency penalty (generation time + verbosity) |
-
-## Reproducing
-
-### Prerequisites
-
-```bash
-pip install openai torch torchvision transformers
-export MOONSHOT_API_KEY="your-key-here"
-```
-
-### Phase 1: Baseline (laptop)
-
-```bash
-python scripts/kimi_api_baseline.py \
-    --test_data /path/to/egoblind_test.json \
-    --output_path results/baseline/baseline_predictions.json
-```
-
-### Phase 2: Training (AWS)
-
-```bash
-# 1. Launch and set up instance
-bash scripts/aws_setup.sh
-ssh -i ~/.ssh/your-key.pem ubuntu@<IP>
-bash scripts/remote_setup.sh
-
-# 2. Upload data and configs
-scp -r data/ configs/ scripts/ ubuntu@<IP>:~/LLaMA-Factory/
-
-# 3. Prepare data with urgency labels and tags
-python scripts/prepare_egoblind_data.py \
-    --egoblind_dir /path/to/egoblind \
-    --urgency_labels /path/to/urgency_labels.json \
-    --output_dir data/
-
-# 4. SFT
-llamafactory-cli train configs/sft_unified.yaml   # Approach 2 (Julia)
-
-# 5. Generate DPO pairs
-python scripts/generate_dpo_pairs.py \
-    --adapter_path output/sft_unified/checkpoint-final \
-    --data_path data/egoblind_urgent_for_dpo.json \
-    --output_path data/egoblind_unified_dpo.json \
-    --alpha 0.4 --beta 0.3 --gamma 0.3
-
-# 6. DPO training
-llamafactory-cli train configs/dpo_unified.yaml
-
-# 7. Download checkpoint before terminating
-scp -r ubuntu@<IP>:~/LLaMA-Factory/output/ ./output/
-```
-
-> ⚠️ **Important:** terminate your AWS instance when done. Download the adapter checkpoint (~200–400MB) before shutting down.
-
-### Phase 3: Evaluation
-
-```bash
-python scripts/inference.py \
-    --adapter_path output/dpo_unified/checkpoint-final \
-    --test_data /path/to/egoblind_test.json \
-    --output_path output/unified_predictions.json
-```
+Base model: [Kimi-VL-A3B-Instruct](https://huggingface.co/moonshotai/Kimi-VL-A3B-Instruct)
 
 ## Results
 
-Baseline results are in `results/baseline/`. See `summary_table.tsv` for a full breakdown and `best_config_breakdown.json` for the top configuration analysis.
+| Routing | Approach 1 Loss | Approach 2 Loss |
+|---------|----------------|----------------|
+| Baseline (uniform) | 0.607 | 0.607 |
+| CLIP classifier | 0.556 | 0.375 |
+| Oracle (GT labels) | 0.549 | 0.375 |
 
-## References
+**DPO finding:** DPO hurts when reference answers are short (1–3 words for urgent queries — no variation in preference pairs). DPO helps when references are longer (non-urgent). The bifurcated design isolates these regimes; the unified design mixes them. This is why DPO regresses Approach 2 but partially helps Approach 1.
 
-- [EgoBlind: Towards Egocentric Visual Assistance for the Blind](https://arxiv.org/abs/2503.08221) (Xiao et al., 2025)
-- [CLIP: Learning Transferable Visual Models From Natural Language Supervision](https://arxiv.org/abs/2103.00020) (Radford et al., 2021)
-- [VizWiz](https://dl.acm.org/doi/10.1145/1866029.1866080) (Bigham et al., 2010)
-- [Ego4D](https://arxiv.org/abs/2110.07058) (Grauman et al., 2021)
+**Robustness finding:** Approach 2's unified adapter matches oracle loss despite 21.5% of test-time urgency tags being wrong. Approach 1 degrades under misrouting. For deployment, Approach 2 is safer.
+
+## Links
+
+| Resource | URL |
+|----------|-----|
+| Joint repo | [juliavekim/EgoBlind-RA](https://github.com/juliavekim/EgoBlind-RA) |
+| Approach 1 adapters | [xabackus/egoblind-ra-adapters](https://huggingface.co/xabackus/egoblind-ra-adapters) |
+| CLIP classifier | [julia225/egoblind-ra-clip-urgency](https://huggingface.co/julia225/egoblind-ra-clip-urgency) |
+| EgoBlind dataset | [Xiao et al. 2025](https://arxiv.org/abs/2503.08221) |
+
+## Directory Structure
+
+```
+final_project/
+├── paper/                     NeurIPS-format report
+│   ├── MMAI_Final_Report.pdf
+│   ├── MMAI_Final_Report.tex
+│   ├── ref.bib
+│   └── pipeline.pdf
+├── presentation/              Beamer slides (presented May 12)
+│   ├── EgoBlind_RA.pdf
+│   └── EgoBlind_RA.tex
+├── eval/                      Evaluation scripts (run on MIT Engaging, L40S GPUs)
+│   ├── evaluate_three_conditions.py    3-condition eval (base, oracle, zero-shot pipeline)
+│   ├── evaluate_pipeline_clip.py       Full pipeline with Julia's CLIP classifier
+│   ├── rescore_pipeline_canonical.py   Re-score with paper's canonical loss params
+│   ├── run_eval_three_conditions.sh    SLURM job script
+│   └── run_eval_pipeline_clip.sh       SLURM job script
+├── training/                  Training scripts and configs
+│   ├── prepare_vision_sft.py           Build vision SFT datasets
+│   ├── generate_dpo_pairs_vision*.py   DPO pair generation (4 variants)
+│   └── configs/                        LLaMA-Factory YAML configs (6 adapters)
+├── results/                   Summary JSONs
+│   ├── eval_summary_pipeline_clip.json
+│   └── FINAL_summary_three_conditions.json
+└── ONBOARDING_DOCUMENT.md     Full project context for LLM-assisted development
+```
+
+## Training on MIT Engaging
+
+SSH: `athena.dialup.mit.edu` → `orcd-login.mit.edu`
+GPU: NVIDIA L40S (46GB), partition `mit_normal_gpu`
+Conda: `egoblind` (training) / `egoblind-eval` (inference)
+
+All adapters use LoRA rank 8, targeting q_proj + v_proj, 1 epoch, `kimi_vl_nothink` template. The urgent adapter trains at lr=1e-4, the non-urgent at lr=2e-5 (higher rate causes NaN on longer targets). Vision conditioning is required — text-only training collapses to "Yes"/"No" pattern matching.
+
+## Citation
+
+```bibtex
+@misc{kim2026egoblindra,
+  title  = {EgoBlind-RA: Towards Safer Egocentric Assistive AI for Blind Users via Risk-Adaptive Routing},
+  author = {Kim, Julia and Backus, Xander},
+  year   = {2026},
+  url    = {https://github.com/juliavekim/EgoBlind-RA},
+}
+```

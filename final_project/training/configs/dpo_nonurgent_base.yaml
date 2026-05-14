@@ -1,0 +1,40 @@
+### DPO config for non-urgent on BASE model (no SFT)
+
+model_name_or_path: moonshotai/Kimi-VL-A3B-Instruct
+trust_remote_code: true
+
+stage: dpo
+do_train: true
+finetuning_type: lora
+pref_beta: 0.1
+pref_loss: sigmoid
+
+template: kimi_vl_nothink
+
+lora_rank: 8
+lora_alpha: 16
+lora_dropout: 0.05
+lora_target: q_proj,v_proj
+
+dataset: egoblind_nonurgent_dpo_base
+dataset_dir: data/
+cutoff_len: 2048
+overwrite_cache: true
+
+output_dir: output/dpo_nonurgent_base
+logging_steps: 5
+save_steps: 50
+save_total_limit: 3
+plot_loss: true
+overwrite_output_dir: true
+
+per_device_train_batch_size: 1
+gradient_accumulation_steps: 8
+learning_rate: 5.0e-6
+num_train_epochs: 3
+lr_scheduler_type: cosine
+warmup_ratio: 0.1
+weight_decay: 0.01
+max_grad_norm: 1.0
+bf16: true
+gradient_checkpointing: false

@@ -1,0 +1,70 @@
+{
+  "classifier": {
+    "accuracy": 0.4793,
+    "precision": 0.6,
+    "recall": 0.0045,
+    "f1": 0.0089,
+    "confusion": {
+      "tp": 3,
+      "fp": 2,
+      "fn": 665,
+      "tn": 613
+    }
+  },
+  "baseline": {
+    "overall_loss": 3.247,
+    "overall_sim": 0.1028,
+    "overall_len": 84.1,
+    "n": 1283,
+    "urgent_loss": 5.6436,
+    "urgent_sim": 0.1236,
+    "urgent_len": 59.0,
+    "n_urgent": 668,
+    "nonurgent_loss": 0.6438,
+    "nonurgent_sim": 0.0803,
+    "nonurgent_len": 111.3,
+    "n_nonurgent": 615
+  },
+  "condition1_base": {
+    "overall_loss": 0.5164,
+    "overall_sim": 0.2856,
+    "overall_len": 4.6,
+    "n": 1283,
+    "urgent_loss": 0.5179,
+    "urgent_sim": 0.3048,
+    "urgent_len": 3.2,
+    "n_urgent": 668,
+    "nonurgent_loss": 0.5147,
+    "nonurgent_sim": 0.2647,
+    "nonurgent_len": 6.1,
+    "n_nonurgent": 615
+  },
+  "condition2_oracle": {
+    "overall_loss": 0.4144,
+    "overall_sim": 0.4083,
+    "overall_len": 4.2,
+    "n": 1283,
+    "urgent_loss": 0.3386,
+    "urgent_sim": 0.5168,
+    "urgent_len": 1.8,
+    "n_urgent": 668,
+    "nonurgent_loss": 0.4968,
+    "nonurgent_sim": 0.2904,
+    "nonurgent_len": 6.8,
+    "n_nonurgent": 615
+  },
+  "condition3_pipeline": {
+    "overall_loss": 0.4807,
+    "overall_sim": 0.3456,
+    "overall_len": 5.1,
+    "n": 1283,
+    "urgent_loss": 0.4681,
+    "urgent_sim": 0.3934,
+    "urgent_len": 3.6,
+    "n_urgent": 668,
+    "nonurgent_loss": 0.4945,
+    "nonurgent_sim": 0.2936,
+    "nonurgent_len": 6.8,
+    "n_nonurgent": 615
+  }
+}

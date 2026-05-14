@@ -1,0 +1,68 @@
+{
+  "classifier": {
+    "type": "clip",
+    "model_path": "/home/xabackus/final_model.pt",
+    "accuracy": 0.781,
+    "precision": 0.8943,
+    "recall": 0.6587,
+    "f1": 0.7586,
+    "confusion": {
+      "tp": 440,
+      "fp": 52,
+      "fn": 228,
+      "tn": 563
+    }
+  },
+  "baseline": {
+    "overall_loss": 3.247,
+    "overall_sim": 0.1028,
+    "overall_len": 84.1,
+    "n": 1283,
+    "urgent_loss": 5.6436,
+    "urgent_sim": 0.1236,
+    "urgent_len": 59.0,
+    "n_urgent": 668,
+    "nonurgent_loss": 0.6438,
+    "nonurgent_sim": 0.0803,
+    "nonurgent_len": 111.3,
+    "n_nonurgent": 615
+  },
+  "oracle": {
+    "overall_loss": 0.4208,
+    "overall_sim": 0.3991,
+    "overall_len": 4.0,
+    "n": 1283,
+    "urgent_loss": 0.349,
+    "urgent_sim": 0.5017,
+    "urgent_len": 1.7,
+    "n_urgent": 668,
+    "nonurgent_loss": 0.4987,
+    "nonurgent_sim": 0.2876,
+    "nonurgent_len": 6.5,
+    "n_nonurgent": 615
+  },
+  "pipeline_clip": {
+    "overall_loss": 0.436,
+    "overall_sim": 0.3929,
+    "overall_len": 4.5,
+    "n": 1283,
+    "urgent_loss": 0.3857,
+    "urgent_sim": 0.4793,
+    "urgent_len": 2.8,
+    "n_urgent": 668,
+    "nonurgent_loss": 0.4907,
+    "nonurgent_sim": 0.299,
+    "nonurgent_len": 6.3,
+    "n_nonurgent": 615
+  },
+  "comparison_with_zero_shot": {
+    "zero_shot_pipeline": {
+      "overall_loss": 0.4807,
+      "overall_sim": 0.3456
+    },
+    "clip_pipeline": {
+      "overall_loss": 0.436,
+      "overall_sim": 0.3929
+    }
+  }
+}
