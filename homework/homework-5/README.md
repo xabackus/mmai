@@ -1,26 +1,28 @@
 # Homework 5: Agentic Multimodal AI
 
-## Reading Assignment
-Survey of three papers on agentic LLMs, covering the distinction between chatbots and agents, multi-step decision-making, and human-in-the-loop collaboration. Designed a hypothetical WCAG accessibility audit agent with formal observation/action spaces and evaluation criteria.
+## Overview
 
-## Hands-On
+Built and evaluated an agentic WCAG web accessibility auditor using Hugging Face's smolagents framework. Covers the full lifecycle: reading assignment on agent architectures, tool design, baseline and custom-tool evaluation, vision-enhanced agents, safety testing, configuration benchmarking, observability with Langfuse, and Discord deployment.
 
-### Accessibility Audit Agent (smolagents)
-Built a WCAG web accessibility auditor using Hugging Face's smolagents framework:
-- **Text-only agent** (Qwen2.5-7B, local): Custom `check_html_accessibility` and `wcag_guideline_lookup` tools. Found 37 issues on the W3C demo page but got stuck in code parsing loops.
-- **Vision agent** (GPT-4o-mini, API): Added browser-based tools (helium) + screenshot capture. Identified visual accessibility issues (contrast, rendered layout) that HTML parsing alone misses. Completed audits in 3 steps vs 9.
+## What I did
 
-### Safety Evaluation
-Tested three adversarial prompts (credential entry, data scraping, prompt injection) before and after system prompt hardening. Key finding: prompt-level guardrails blocked 2/3 attacks, but a direct "ignore all previous instructions" injection defeated them in both conditions — structural mitigations (input classifiers, tool allowlists) are necessary.
+- **Reading assignment**: surveyed three papers on agentic LLMs. Designed a formal agent specification (observation/action spaces, transition dynamics, stopping conditions) for a WCAG accessibility auditor. Compared autonomous vs human-in-the-loop architectures.
 
-### Agent Configurations
-Compared CodeAgent vs ToolCallingAgent and different step budgets. ToolCallingAgent was the clear winner: zero code parsing errors, 4x richer output, competitive latency.
+- **Built a custom-tool agent** with `check_html_accessibility` and `wcag_guideline_lookup` tools. The custom tools eliminated the baseline's most critical failure — hallucinating violations on accessible pages — by programmatically verifying HTML structure instead of relying on the model's pattern-matching.
 
-### Discord Deployment
-Deployed the agent as a Discord bot with hybrid triggering (@mention + keyword detection). Successfully refused out-of-scope requests while responding to accessibility audit keywords.
+- **Vision-enhanced agent** (GPT-4o-mini + browser screenshots) identified visual accessibility issues (contrast, rendered layout) that HTML parsing alone cannot detect. Completed audits in 3 steps vs the text-only agent's 9.
 
-### OpenClaw (Optional)
-Explored OpenClaw as a persistent agent daemon. Compared its always-on architecture with smolagents' ephemeral design, discussing the security implications of persistent system-level access.
+- **Safety evaluation**: tested three adversarial prompts before and after system prompt hardening. Prompt injection ("ignore all previous instructions") defeated guardrails in both conditions, demonstrating that structural mitigations (input classifiers, tool allowlists) are necessary beyond prompt-level rules.
+
+- **Agent configurations**: benchmarked CodeAgent vs ToolCallingAgent across step budgets. ToolCallingAgent won on reliability (zero parsing errors), output quality (4x richer reports), and competitive latency.
+
+- **Discord deployment**: built a bot with hybrid trigger (@mention + keyword detection) that correctly refuses out-of-scope requests while responding to accessibility audit queries.
+
+## Connection to the final project
+
+The connection is less direct than HW3–4, but there's a shared theme: building systems that respond appropriately to the *type* of input they receive. In this homework, the agent must distinguish audit requests from adversarial prompts and refuse the latter. In EgoBlind-RA, the system must distinguish urgent from non-urgent queries and respond differently to each. Both require a classification stage that gates downstream behavior — the CLIP urgency classifier in our project serves an analogous role to the safety classifier / scope detection in the agent. The safety evaluation findings (prompt-level guardrails are insufficient; you need structural separation) also rhyme with our paper's finding that prompt-level urgency conditioning (Approach 2) and structural urgency separation (Approach 1) have different robustness properties.
 
 ## Files
-- `Xander_Backus_HW5_Written_Responses.pdf` — All parts (reading + hands-on + deployment + analysis)
+
+- `Xander_Backus_HW5_Written_Responses.pdf` — All written responses (parts 1–6 + optional)
+- `Homework_5_AI_Agents.ipynb` — Agent notebook (smolagents, Langfuse, safety eval)
